@@ -1,0 +1,77 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsShowIcons true
+config windowHintsFontColor 50;99;37;1.0
+config switchShowTitles true
+
+# Resize Bindings
+bind l:alt       resize +10% +0
+bind h:alt       resize -10% +0
+# expand top up is broken when window is bordering top of screen
+#bind k:alt       resize +0   +10%  bottom-left
+bind k:alt       sequence nudge +0 -10% > resize +0   +10%  top-left
+bind j:alt       resize +0   -10%  bottom-right
+bind l:ctrl;alt  resize -10% +0   bottom-right
+# expand left left is broken when window is bordering right of screen
+#bind h:ctrl;alt  resize +10% +0   bottom-right
+bind h:ctrl;alt  sequence nudge -10% +0 > resize +10% +0 bottom-left
+bind k:ctrl;alt  resize +0   -10% top-right
+bind j:ctrl;alt  resize +0   +10% top-right
+
+# Push halfing
+bind u:ctrl;alt corner top-left     resize:screenSizeX/2;screenSizeY/2
+bind o:ctrl;alt corner top-right    resize:screenSizeX/2;screenSizeY/2
+bind n:ctrl;alt corner bottom-left  resize:screenSizeX/2;screenSizeY/2
+bind m:ctrl;alt corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Push Bindings
+bind l:ctrl;cmd  push right bar-resize:screenSizeX/3
+bind h:ctrl;cmd  push left  bar-resize:screenSizeX/3
+bind k:ctrl;cmd  push up    bar-resize:screenSizeY/2
+bind j:ctrl;cmd  push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+bind l:shift;alt nudge +10% +0
+bind h:shift;alt nudge -10% +0
+bind k:shift;alt nudge +0   -10%
+bind j:shift;alt nudge +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0     #resize
+bind 2:ctrl;alt         throw 1     #resize
+bind 3:ctrl;alt         throw 2     #resize
+bind right:ctrl;alt;cmd throw right #resize
+bind left:ctrl;alt;cmd  throw left  #resize
+bind up:ctrl;alt;cmd    throw up    #resize
+bind down:ctrl;alt;cmd  throw down  #resize
+
+# Corner
+bind u:ctrl;cmd corner top-left
+bind o:ctrl;cmd corner top-right
+bind n:ctrl;cmd corner bottom-left
+bind m:ctrl;cmd corner bottom-right
+
+# Focus Bindings
+#bind right:cmd    focus right
+#bind left:cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
+
+# Window Hints
+bind ':cmd hint JKLHNBIUPYM[09877YGV]
+
+# Switch
+#bind tab:alt switch
+
+# Grid
+bind ':ctrl;cmd grid padding:5 1920x1200:8,8
+
+# App
+bind `:alt;cmd  relaunch
+
+# vim:set ft=conf:

@@ -1,0 +1,224 @@
+#!/bin/bash
+# Mac aliases
+
+alias astart="sudo apachectl start"
+alias astop="sudo apachectl stop"
+alias arestart="sudo apachectl restart"
+alias ba='. ~/Dropbox/env/.bash_aliases'
+alias bae='v ~/Dropbox/env/.bash_aliases && ba'
+alias C='c'
+#alias c='g++ -Wall'
+alias chrome-blank='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=~/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized'
+alias cl='clear'
+alias clipb='xargs echo -n | xclip -selection clip'
+alias convertDates="awk 'system(\"date -r\" \$1)'"
+alias copywd='pwd | tr -d \\n | pbcopy'
+alias copypwd='pwd -P | tr -d \\n | pbcopy'
+alias cutcl="cut -d' ' -f2 | tr -d \"\n\""
+alias cutclc="cutcl | pbcopy"
+alias d='vim -d'
+#alias diskspace="df -h /dev/disk0s2/ | grep -C 2 '[0-9\.]\+[GM]\s\+[0-9]\+\%'"
+alias diskspace="df -h | head -2 | grep -C 1 -i Gi"
+# Enables holding down a key to repeat in GUI apps; disables accent menu
+alias enablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool false"
+alias disablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool true"
+alias e='vim'
+alias f='fg'
+alias findnonhidden='find . -type f \( ! -regex ".*/\..*" \)'
+alias lsnonhidden_tree='find . | grep -v "\/\." | less'
+alias lu='l ../'
+alias flatzip='zip -rj'
+alias g='grep --color=always -i'
+# Highlights name, version, description of apt-cache show. Also grep -v extras.
+alias ga='grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|Bugs" | grep -C 99 "Package: \w\+\|Version: .\+\|Description-\w\+: .\+"'
+alias gf='asadmin start-domain --debug=true domain1'
+alias gfstop='asadmin stop-domain domain1'
+alias gfrestart='asadmin restart-domain domain1'
+alias git-diffprev='git diff HEAD@{1}'
+alias gpg='gpg2'
+alias grave="echo -n '\`' | clipb"
+alias gr='grep -irn'
+alias grep='grep --color=always'
+alias grepi='grep -i --color=always'
+alias grepnc='grep --color=none'
+alias grepTimes='grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[0-9]\{10\}"'
+alias godocServer='godoc -http=:6060 & open http://localhost:6060/pkg/'
+alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=remote-profile'
+alias gv='mvim'
+alias h='htop'
+alias hgcommitted='hg st --change -1'
+alias is='sudo iftop -i wlan0 -B'
+alias jdump='jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar'
+alias jfind="java -jar $HOME/Utilities/jarscan/jarscan.jar"
+alias ju='java org.junit.runner.JUnitCore'
+alias lc='ls -F -C1'
+alias less='less -FSRX'
+alias ll='ls -alF'
+alias la='ls -ACF'
+alias l='ls -CF'
+alias lh='ls -gohF'
+# List hidden files with their sizes
+alias lha='ls -agohF'
+alias loginTimes="syslog -F raw -k Facility com.apple.system.lastlog | grep $USER | grep -v tty"
+# List directories only
+alias lsd="l | grep --color=none '.*/'"
+alias mysql_local="mysql --host=localhost -uroot -p"
+alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
+alias p4-describe="p4 describe -S -s"
+alias pserve='python -m SimpleHTTPServer'
+alias start_mysql='mysqld_safe &'
+alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
+alias sudo='sudo '
+# Prints out a bunch of local network devices and highlights device names
+#alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
+alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
+alias p='python'
+alias p4-pending-all="p4 changes -s pending -u $USER -l | snt"
+alias p4p="p4-pending-all"
+alias psgrep='ps -ef | grep -v grep | grep -E'
+alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
+alias public="cd ~/dev/ems/iop/development/Public/"
+alias sleepTimes="pmset -g log | grep -iE '^.{24} sleep '"
+alias snt="sn \"s/\n\n\t/ /g\""
+alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
+alias unblockRecent='sudo chattr -i ~/.local/share/recently-used.xbel'
+alias u='cd ..; ls -CF'
+alias ups='cd -P ..'
+alias up='cd ..'
+alias upl='cd ..; ls -CF'
+alias upp='cd ../../'
+alias uppp='cd ../../../'
+alias upppp='cd ../../../../'
+alias v='mvim -v'
+alias vv='vim ~/.vimrc'
+alias o='open "'.'"'
+alias lastC='l -C1 -t | head -1'
+alias r='vim -M'
+alias ro='vim -M'
+alias te='open -a TextEdit'
+alias tt='top -n0 -l1'
+alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
+alias x='exit'
+
+# Make a directory, change to it, print it
+function mc() {
+	mkdir -p $1
+	cd $1
+	pwd
+}
+# Change to directory and list contents
+function cdl () {
+	cd $1
+	ls -CF
+}
+function findnotcontain() {
+	find . -type f ! -exec grep -q "$1" {} \; -print
+}
+function loginTimesSome() {
+	loginTimes | tail -$1 | grepTimes | convertDates
+}
+function grepTo() {
+	local RESULTS=$(grep -rl "$@")
+	echo $RESULTS
+	if [ $RESULTS ]; then
+		cd $(dirname $(echo -n $RESULTS | head -1))
+	else
+		echo "Nothing found."
+	fi
+}
+function ff() {
+	if [ $2 ]; then
+		find -H "$1" -iname "$2"
+	else
+		find -H . -iname "$1"
+	fi
+}
+function ft() {
+	local DIR="."
+	local TARGET="$2"
+	if [ $2 ]; then
+		DIR="$1"
+	else
+		TARGET="$1"
+	fi
+	local RESULTS=$(find -H "$DIR" -iname "$TARGET" -print -quit)
+	echo $RESULTS
+	if [ $RESULTS ]; then
+		cd $(dirname $(echo "$RESULTS"))
+	else
+		echo "Nothing found."
+	fi
+}
+function va() {
+	vim "$1" && git add "$1"
+}
+function ffb() {
+	find "$1" \( -path "*/build" -o -path "*/dist" \) -prune -o -iname "*$2*" -print
+}
+function ffv() {
+	vim `ff $@`
+}
+function p4-pending() {
+	p4 changes -s pending -u "$P4USER" `ffb . "$1"`
+}
+function c() {
+	cd "$@" && l
+}
+function cdd() {
+cd `dirname $@`
+}
+function p4shelved() {
+ p4 changes -u "$USER" -s shelved "$@" |  cut -d' ' -f2 | p4 -x- describe -S -s | grep --color=none -o "\.\.\. \/\/depot.*\|[0-9]\{6\}" | grep --color=none  -B1 "depot"
+}
+function p4a() {
+	local CL=$(p4p | grepi "$1" | cutcl)
+	local P4ARGS="-c $CL `ff $2 $3`"
+	eval "p4 add $P4ARGS"
+	p4-describe "$CL" | snt
+}
+function p4e() {
+	local EDIT="edit"
+	local CL=$(p4p | grepi "$1" | cutcl)
+	local P4ARGS="-c $CL `ff $2 $3`"
+	local OUTPUT=`p4 $EDIT $P4ARGS`
+	if [[ $OUTPUT == *reopen* ]]
+	then
+		EDIT="reopen"
+		eval "p4 $EDIT $P4ARGS"
+		p4-describe "$CL" | snt
+	else
+		echo "$OUTPUT"
+		p4-describe "$CL" | snt
+	fi
+}
+function sn() {
+	sed ":a;N;\$!ba;$@"
+}
+function m() {
+	if [ $2 ]; then
+		mv "$@"
+	else
+		mkdir "$@"
+	fi
+}
+function total() {
+	if [ $1 ]; then
+		paste -sd+ $1 | bc
+	else
+		paste -sd+ | bc
+	fi
+}
+function convertTextToPath() {
+	local TMP_FILE_NAME="convertText-tmp-pdf.pdf"
+	inkscape $1 --export-text-to-path --export-pdf=$TMP_FILE_NAME && inkscape --export-plain-svg $2 $TMP_FILE_NAME
+	rm $TMP_FILE_NAME
+}
+
+if [ -f "$HOME/.work_bash_aliases.env" ]
+then
+	source $HOME/.work_bash_aliases.env
+fi
+if [ -f "$HOME/.private.env" ]
+then
+	source $HOME/.private.env
+fi

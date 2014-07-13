@@ -1,0 +1,27 @@
+[ui]
+username = Thomas Lee <tleehoc@gmail.com>
+ssh = ssh -C
+ignore = ~/.hgignore_global
+
+#[tortoisehg]
+#editor = gnome-terminal -x vim
+#defaultwidget = commit
+#promoteditems = commit, log, synch
+
+[extensions]
+mq=
+color=
+pager=
+graphlog=
+hgk=
+#inotify=
+hgext.bookmarks=
+#hggit= 
+
+[pager]
+#pager = LESS='FSRX' less
+pager = less -FSRX
+attend = annotate, cat, diff, export, glog, log, qdiff, status, help, manifest
+#Overidden by 'attend', defaults below
+#ignore = version, help, update, serve, record
+
