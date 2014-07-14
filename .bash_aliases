@@ -5,7 +5,6 @@ alias astart="sudo apachectl start"
 alias astop="sudo apachectl stop"
 alias arestart="sudo apachectl restart"
 alias ba='. ~/Dropbox/env/.bash_aliases'
-alias bae='v ~/Dropbox/env/.bash_aliases && ba'
 alias C='c'
 #alias c='g++ -Wall'
 alias chrome-blank='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=~/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized'
@@ -208,10 +207,24 @@ function total() {
 		paste -sd+ | bc
 	fi
 }
+# Requires inkscape to be aliased to the full path and -z
 function convertTextToPath() {
 	local TMP_FILE_NAME="convertText-tmp-pdf.pdf"
 	inkscape $1 --export-text-to-path --export-pdf=$TMP_FILE_NAME && inkscape --export-plain-svg $2 $TMP_FILE_NAME
 	rm $TMP_FILE_NAME
+}
+# Updates git repo
+function bae() {
+	v ~/Dropbox/env/.bash_aliases && ba
+	cd ~/Dropbox/env/
+	git add -A
+	local DIFF_STAT=$(git status --porcelain)
+	git commit -m "Auto commit: $DIFF_STAT"
+	read -p "Push? " should_push
+	if [ "$should_push" == "y" ]
+	then
+		git push
+	fi
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
