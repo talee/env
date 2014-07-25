@@ -189,6 +189,9 @@ function p4e() {
 		p4-describe "$CL" | snt
 	fi
 }
+function p4fileChangelist() {
+	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3'
+}
 function sn() {
 	sed ":a;N;\$!ba;$@"
 }
