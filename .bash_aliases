@@ -156,14 +156,19 @@ function ffb() {
 function ffv() {
 	vim `ff $@`
 }
-function p4-pending() {
-	p4 changes -s pending -u "$P4USER" `ffb . "$1"`
+# List pending changelists for given file name
+function p4pending() {
+	# p4 changes -s pending -u "$P4USER" `ffb . "$1"`
+	p4 changes -s pending -u "$P4USER" -c `p4filech`
 }
 function c() {
 	cd "$@" && l
 }
 function cdd() {
 cd `dirname $@`
+}
+function p4changelistOf() {
+	p4 describe `p4filech $@`
 }
 function p4shelved() {
  p4 changes -u "$USER" -s shelved "$@" |  cut -d' ' -f2 | p4 -x- describe -S -s | grep --color=none -o "\.\.\. \/\/depot.*\|[0-9]\{6\}" | grep --color=none  -B1 "depot"
@@ -189,7 +194,7 @@ function p4e() {
 		p4-describe "$CL" | snt
 	fi
 }
-# p4fileChangelist
+# Prints p4 file changelist
 function p4filech() {
 	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3}'
 }
