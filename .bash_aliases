@@ -76,7 +76,6 @@ alias p4-pending-all="p4 changes -s pending -u $USER -l | snt"
 alias p4p="p4-pending-all | tac"
 alias psgrep='ps -ef | grep -v grep | grep -E'
 alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
-alias public="cd ~/dev/ems/iop/development/Public/"
 alias sleepTimes="pmset -g log | grep -iE '^.{24} sleep '"
 alias snt="sn \"s/\n\n\t/ /g\""
 alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
