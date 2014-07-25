@@ -189,7 +189,8 @@ function p4e() {
 		p4-describe "$CL" | snt
 	fi
 }
-function p4fileChangelist() {
+# p4fileChangelist
+function p4filech() {
 	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3}'
 }
 function sn() {
