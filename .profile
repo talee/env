@@ -60,7 +60,9 @@ export M2=$M2_HOME/bin/
 export PATH=$PATH:$M2
 
 # PhantomJS
-export PATH=$PATH:/usr/local/phantomjs-1.9.7-macosx/bin/
+#export PHANTOMJS_BIN=/usr/local/phantomjs-1.9.7-macosx/bin/
+export PHANTOMJS_BIN=/usr/local/bin/phantomjs
+export PATH=$PATH:$PHANTOMJS_BIN
 
 # NPM
 export PATH=$PATH:$HOME/local/bin/
@@ -68,6 +70,9 @@ export PATH=$PATH:$HOME/local/bin/
 # Inkscape - requires full path
 #export PATH=$PATH:/Applications/Inkscape.app/Contents/Resources/bin/
 alias inkscape='/Applications/Inkscape.app/Contents/Resources/bin/inkscape -z'
+
+# Google Closure Compiler
+export PATH=$PATH:$HOME/dev/lib/compiler-latest/
 
 # BOTTOM - set only if not set before
 if [ -z "${INITIAL_PATH}" ]
