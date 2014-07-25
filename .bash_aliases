@@ -190,7 +190,7 @@ function p4e() {
 	fi
 }
 function p4fileChangelist() {
-	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3'
+	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3}'
 }
 function sn() {
 	sed ":a;N;\$!ba;$@"
@@ -215,9 +215,13 @@ function convertTextToPath() {
 	inkscape $1 --export-text-to-path --export-pdf=$TMP_FILE_NAME && inkscape --export-plain-svg $2 $TMP_FILE_NAME
 	rm $TMP_FILE_NAME
 }
+function bak() {
+	mv $1{,.$2}
+}
 # Updates git repo
 function bae() {
 	v ~/Dropbox/env/.bash_aliases && ba
+	local WD=$PWD
 	cd ~/Dropbox/env/
 	git add -A
 	local DIFF_STAT=$(git status --porcelain)
@@ -227,6 +231,7 @@ function bae() {
 	then
 		git push
 	fi
+	cd $WD
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
