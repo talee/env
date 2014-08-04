@@ -179,9 +179,11 @@ function p4a() {
 	eval "p4 add $P4ARGS"
 	p4-describe "$CL" | snt
 }
+# $1 Name of changelist or changelistnumber
+# $2 Name of file to checkout
 function p4e() {
 	local EDIT="edit"
-	local CL=$(p4p | grepi "$1" | cutcl)
+	local CL=$(p4p | grepi --color=none "$1" | cutcl)
 	local P4ARGS="-c $CL `ff $2 $3`"
 	local OUTPUT=`p4 $EDIT $P4ARGS`
 	if [[ $OUTPUT == *reopen* ]]
