@@ -98,6 +98,10 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
+function appendsudo() {
+	cat << EOF | sudo tee -a $1 > /dev/null
+}
+
 # Make a directory, change to it, print it
 function mc() {
 	mkdir -p $1
