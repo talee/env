@@ -37,6 +37,7 @@ alias git-diffprev='git diff HEAD@{1}'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
 alias gr='grep -irn'
+alias grnb='gr --exclude-dir=bower_components/'
 alias grep='grep --color=always'
 alias grepi='grep -i --color=always'
 alias grepnc='grep --color=none'
