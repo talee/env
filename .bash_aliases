@@ -201,6 +201,22 @@ function p4e() {
 		p4-describe "$CL" | snt
 	fi
 }
+# Same p4e except always uses most recent changelist
+function p4el() {
+	local EDIT="edit"
+	local CL=$(p4p | tail -1 | cutcl)
+	local P4ARGS="-c $CL `ff $1 $2`"
+	local OUTPUT=`p4 $EDIT $P4ARGS`
+	if [[ $OUTPUT == *reopen* ]]
+	then
+		EDIT="reopen"
+		eval "p4 $EDIT $P4ARGS"
+		p4-describe "$CL" | snt
+	else
+		echo "$OUTPUT"
+		p4-describe "$CL" | snt
+	fi
+}
 # Prints p4 file changelist
 function p4filech() {
 	p4 fstat -Ro ...$@ | awk '{if ($2 == "change") print $3}'
