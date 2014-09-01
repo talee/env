@@ -33,6 +33,7 @@ alias ga='grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|B
 alias gf='asadmin start-domain --debug=true domain1'
 alias gfstop='asadmin stop-domain domain1'
 alias gfrestart='asadmin restart-domain domain1'
+alias gg='git'
 alias git-diffprev='git diff HEAD@{1}'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
