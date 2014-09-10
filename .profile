@@ -53,6 +53,7 @@ export PATH=/usr/local/git/bin/:$PATH
 
 # Java
 export JAVA_HOME="$(java_home)"
+export JAVA_HOME7="`java_home -v 1.7`"
 
 # Maven
 export M2_HOME=/usr/local/apache-maven/current/
