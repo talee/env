@@ -266,6 +266,9 @@ function bae() {
 	fi
 	cd $WD
 }
+function gf4() {
+	export PATH=/Applications/NetBeans/glassfish-4.0/bin:$PATH
+}
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
 then
