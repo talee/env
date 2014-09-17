@@ -29,7 +29,9 @@ bind m:ctrl;alt corner bottom-right resize:screenSizeX/2;screenSizeY/2
 
 # Push Bindings
 bind l:ctrl;cmd  push right bar-resize:screenSizeX/3
+bind l:shift;ctrl;cmd  push right bar-resize:screenSizeX/2
 bind h:ctrl;cmd  push left  bar-resize:screenSizeX/3
+bind h:shift;ctrl;cmd  push left  bar-resize:screenSizeX/2
 bind k:ctrl;cmd  push up    bar-resize:screenSizeY/2
 bind j:ctrl;cmd  push down  bar-resize:screenSizeY/2
 
