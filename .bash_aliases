@@ -271,7 +271,7 @@ function gf4() {
 }
 function gitwork() {
 	git config user.name "Thomas Lee"
-	git config user.email "thomas_lee@intuit.com"
+	git config user.email "Thomas_Lee@intuit.com"
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
