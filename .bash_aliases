@@ -269,6 +269,10 @@ function bae() {
 function gf4() {
 	export PATH=/Applications/NetBeans/glassfish-4.0/bin:$PATH
 }
+function gitwork() {
+	git config user.name "Thomas Lee"
+	git config user.email "thomas_lee@intuit.com"
+}
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
 then
