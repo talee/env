@@ -77,6 +77,7 @@ alias sudo='sudo '
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
 alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
 alias p='python'
+alias p4ch='p4p | tail -1 | cut -d" " -f2'
 alias p4-pending-all="p4 changes -s pending -u $USER -l | snt"
 alias p4p="p4-pending-all | tac"
 alias psgrep='ps -ef | grep -v grep | grep -E'
