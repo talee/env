@@ -1,5 +1,6 @@
 #!/bin/bash
 # Mac aliases
+# tac for example requires coreutils
 
 alias astart="sudo apachectl start"
 alias astop="sudo apachectl stop"
