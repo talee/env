@@ -277,6 +277,10 @@ function p4stash {
 	p4 shelve -c $CH
 	p4 revert -c $CH //...
 }
+function p4unstash {
+	CH="`p4ch`"
+	p4 unshelve -c $CH -s $CH
+}
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
 then
