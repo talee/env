@@ -70,7 +70,6 @@ alias mysql_local="mysql --host=localhost -uroot -p"
 alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
 alias p4-describe="p4 describe -S -s"
 alias p4s='p4 describe -s `p4ch`'
-alias p4stash='p4 shelve -c `p4ch`'
 alias pserve='python -m SimpleHTTPServer'
 alias start_mysql='mysqld_safe &'
 alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
@@ -272,6 +271,11 @@ function bae() {
 }
 function gf4() {
 	export PATH=/Applications/NetBeans/glassfish-4.0/bin:$PATH
+}
+function p4stash {
+	CH="`p4ch`"
+	p4 shelve -c $CH
+	p4 revert -c $CH
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
