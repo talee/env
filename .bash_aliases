@@ -294,6 +294,9 @@ function p4files {
 	fi
 	p4 opened -c $CH | cut -d"#" -f1
 }
+function p4diff {
+	p4files | xargs -L1 p4 diff 2>&1 /dev/null
+}
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
