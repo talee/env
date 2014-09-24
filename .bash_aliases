@@ -69,7 +69,6 @@ alias lsd="l | grep --color=none '.*/'"
 alias mysql_local="mysql --host=localhost -uroot -p"
 alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
 alias p4-describe="p4 describe -S -s"
-alias p4s='p4 describe -s `p4ch`'
 alias pserve='python -m SimpleHTTPServer'
 alias start_mysql='mysqld_safe &'
 alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
@@ -280,6 +279,10 @@ function p4stash {
 function p4unstash {
 	CH="`p4ch`"
 	p4 unshelve -c $CH -s $CH
+}
+function p4s {
+	CH="`p4ch`"
+	p4 describe -s `p4ch` $@
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
