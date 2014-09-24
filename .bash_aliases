@@ -274,7 +274,7 @@ function gf4() {
 }
 function p4stash {
 	CH="`p4ch`"
-	p4 shelve -c $CH
+	p4 shelve -c $CH -f
 	p4 revert -c $CH //...
 }
 function p4unstash {
