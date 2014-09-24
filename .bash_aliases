@@ -295,7 +295,7 @@ function p4files {
 	p4 opened -c $CH | cut -d"#" -f1
 }
 function p4diff {
-	p4files | xargs -L1 p4 diff 2>&1 /dev/null
+	p4files | xargs -L1 p4 diff
 }
 
 # ---------- END FUNCTIONS -------------------------
