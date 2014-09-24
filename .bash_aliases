@@ -282,7 +282,7 @@ function p4unstash {
 }
 function p4s {
 	CH="`p4ch`"
-	p4 describe -s `p4ch` $@
+	p4 describe $@ -s `p4ch`
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
