@@ -275,7 +275,7 @@ function gf4() {
 function p4stash {
 	CH="`p4ch`"
 	p4 shelve -c $CH
-	p4 revert -c $CH
+	p4 revert -c $CH //...
 }
 
 if [ -f "$HOME/.work_bash_aliases.env" ]
