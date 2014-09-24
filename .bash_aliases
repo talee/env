@@ -69,7 +69,7 @@ alias lsd="l | grep --color=none '.*/'"
 alias mysql_local="mysql --host=localhost -uroot -p"
 alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
 alias p4-describe="p4 describe -S -s"
-alias p4stat='p4 describe -s `p4ch`'
+alias p4st='p4 describe -s `p4ch`'
 alias pserve='python -m SimpleHTTPServer'
 alias start_mysql='mysqld_safe &'
 alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
