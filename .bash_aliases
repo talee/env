@@ -287,7 +287,15 @@ function p4s {
 function p4unshelve {
 	p4 unshelve $2 -s $1 -c $1
 }
+function p4files {
+	CH="`p4ch`"
+	if [ $1 ]; then
+		CH="$1"
+	fi
+	p4 opened -c $CH | cut -d"#" -f1
+}
 
+# ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
 then
 	source $HOME/.work_bash_aliases.env
