@@ -199,6 +199,7 @@ function p4e() {
 	local OUTPUT=`p4 $EDIT $P4ARGS`
 	if [[ $OUTPUT == *reopen* ]]
 	then
+		# What was reopen for again??
 		EDIT="reopen"
 		eval "p4 $EDIT $P4ARGS"
 		p4-describe "$CL" | snt
@@ -207,21 +208,23 @@ function p4e() {
 		p4-describe "$CL" | snt
 	fi
 }
-# Same p4e except always uses most recent changelist
+# Edits otherwises adds
+# Similiar p4e except always uses most recent changelist
 function p4el() {
 	local EDIT="edit"
 	local CL=$(p4p | tail -1 | cutcl)
 	local P4ARGS="-c $CL `ff $1 $2`"
-	local OUTPUT=`p4 $EDIT $P4ARGS`
-	if [[ $OUTPUT == *reopen* ]]
-	then
-		EDIT="reopen"
+	local OUTPUT=`p4 $EDIT $P4ARGS 2>&1`
+	if [[ $OUTPUT =~ "reopen" ]]; then
+		local EDIT="reopen"
 		eval "p4 $EDIT $P4ARGS"
-		p4-describe "$CL" | snt
+	elif [[ $OUTPUT =~ "not on client" ]]; then
+		local EDIT="add"
+		eval "p4 $EDIT $P4ARGS"
 	else
 		echo "$OUTPUT"
-		p4-describe "$CL" | snt
 	fi
+	p4 describe -s "$CL" | snt
 }
 # Prints p4 file changelist
 function p4filech() {
