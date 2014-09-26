@@ -79,7 +79,6 @@ alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
-alias p4-pending-all="p4 changes -s pending -u $USER -l -c `p4client` | snt"
 alias p4p="p4-pending-all | tac"
 alias psgrep='ps -ef | grep -v grep | grep -E'
 alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
@@ -301,6 +300,10 @@ function p4files {
 function p4diff {
 	p4files | xargs -L1 p4 diff
 }
+function p4-pending-all() {
+	p4 changes -s pending -u $USER -l -c `p4client` | snt
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
