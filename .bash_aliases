@@ -304,6 +304,7 @@ function p4diff {
 function p4-pending-all() {
 	p4 changes -s pending -u $USER -l -c `p4client` | snt
 }
+# git branch for p4
 function p4b() {
 	local P4BDIR=`p4bdir`
 	if [ ! -d $P4BDIR ]; then
@@ -315,6 +316,7 @@ function p4b() {
 	fi
 	p4bnew $@
 }
+# same as p4b except it doesn't check/create the p4b directory
 function p4bnew() {
 	local P4BDIR=`p4bdir`
 	if [ $1 ]; then
@@ -323,13 +325,11 @@ function p4bnew() {
 		local BRANCH_NAME="default"
 	fi
 	local BRANCH_FILE="$P4BDIR/$BRANCH_NAME"
-	echo "BRANCH_FILE $BRANCH_FILE"
 	if [ -f $BRANCH_FILE ]; then
-		# Print branch if current
+		# Print all branches
 		local BRANCH_CURRENT="`cat $(p4bdir)/current`"
 		if [ $BRANCH_NAME = $BRANCH_CURRENT ]; then
-			p4bstat $BRANCH_NAME
-			echo RESUME
+			p4bstatall
 		else
 			# Otherwise switch to branch
 			local BRANCH_CH="`cat $BRANCH_FILE`"
@@ -348,6 +348,7 @@ function p4bnewforce() {
 	p4ch > $P4BDIR/$BRANCH_NAME
 	echo "Created new branch $BRANCH_NAME -> `p4ch`"
 }
+# Creates p4b directory for current client if the directory doesn't exist
 function p4binit() {
 	if [[ "`p4 client -o  2>&1`" =~ "doesn't exist" ]]; then
 		echo "Not in a p4 directory. Exiting."
@@ -355,20 +356,41 @@ function p4binit() {
 	fi
 	mkdir "`p4root`/.p4b/"
 }
+# Prints root directory of p4b
 function p4bdir() {
 	echo "`p4root`/.p4b/"
 }
+# Print changelist of given branch, or current branch if no arguments
 function p4bch() {
 	local P4BDIR="`p4bdir`"
 	local BRANCH=$1
 	if [ ! $BRANCH ]; then
 		local BRANCH=current
 	fi
-	cat $P4BDIR/`cat $P4BDIR/$BRANCH`
+	cat $P4BDIR/$BRANCH
 }
+# Prints given branch and its changelist
 function p4bstat() {
 	local BRANCH=$1
 	echo -e "`p4bch $BRANCH`\t$BRANCH"
+}
+# Prints all branches and their changelists
+function p4bstatall() {
+	local P4BDIR="`p4bdir`"
+	local BRANCH_CURRENT="`cat $(p4bdir)/current`"
+	for branch in `l $P4BDIR -I current`; do
+		if [ $branch = $BRANCH_CURRENT ]; then
+			p4bstat $branch | hlg
+		else
+			p4bstat $branch
+		fi
+	done
+}
+# Highlight stdin in green
+function hlg() {
+	echo -en "\x1B[32m"
+	cat
+	echo -en "\x1B[0m"
 }
 
 
