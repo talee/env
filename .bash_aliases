@@ -79,6 +79,7 @@ alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
+alias p4root='p4 client -o | g "^Root:" | cut -f2'
 alias p4p="p4-pending-all | tac"
 alias psgrep='ps -ef | grep -v grep | grep -E'
 alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
@@ -302,6 +303,72 @@ function p4diff {
 }
 function p4-pending-all() {
 	p4 changes -s pending -u $USER -l -c `p4client` | snt
+}
+function p4b() {
+	local P4BDIR=`p4bdir`
+	if [ ! -d $P4BDIR ]; then
+		echo "Creating $P4BDIR with current changelist as current branch"
+		p4binit
+		if [ ! $? = 0 ]; then
+			return $?
+		fi
+	fi
+	p4bnew $@
+}
+function p4bnew() {
+	local P4BDIR=`p4bdir`
+	if [ $1 ]; then
+		local BRANCH_NAME=$1
+	else
+		local BRANCH_NAME="default"
+	fi
+	local BRANCH_FILE="$P4BDIR/$BRANCH_NAME"
+	echo "BRANCH_FILE $BRANCH_FILE"
+	if [ -f $BRANCH_FILE ]; then
+		# Print branch if current
+		local BRANCH_CURRENT="`cat $(p4bdir)/current`"
+		if [ $BRANCH_NAME = $BRANCH_CURRENT ]; then
+			p4bstat $BRANCH_NAME
+			echo RESUME
+		else
+			# Otherwise switch to branch
+			local BRANCH_CH="`cat $BRANCH_FILE`"
+			echo $BRANCH_NAME > $P4BDIR/current
+		fi
+	else
+		# Create new branch
+		p4bnewforce $P4BDIR $BRANCH_NAME
+	fi
+}
+# Creates new branch with latest p4 changelist
+function p4bnewforce() {
+	local P4BDIR=$1
+	local BRANCH_NAME=$2
+	echo $BRANCH_NAME > $P4BDIR/current
+	p4ch > $P4BDIR/$BRANCH_NAME
+	echo "Created new branch $BRANCH_NAME -> `p4ch`"
+}
+function p4binit() {
+	if [[ "`p4 client -o  2>&1`" =~ "doesn't exist" ]]; then
+		echo "Not in a p4 directory. Exiting."
+		return 1
+	fi
+	mkdir "`p4root`/.p4b/"
+}
+function p4bdir() {
+	echo "`p4root`/.p4b/"
+}
+function p4bch() {
+	local P4BDIR="`p4bdir`"
+	local BRANCH=$1
+	if [ ! $BRANCH ]; then
+		local BRANCH=current
+	fi
+	cat $P4BDIR/`cat $P4BDIR/$BRANCH`
+}
+function p4bstat() {
+	local BRANCH=$1
+	echo -e "`p4bch $BRANCH`\t$BRANCH"
 }
 
 
