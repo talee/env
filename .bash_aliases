@@ -325,6 +325,7 @@ function p4bnew() {
 		local BRANCH_NAME="default"
 	fi
 	local BRANCH_FILE="$P4BDIR/$BRANCH_NAME"
+	# RESUME: creating branches is acting weird
 	if [ -f $BRANCH_FILE ]; then
 		# Print all branches
 		local BRANCH_CURRENT="`cat $(p4bdir)/current`"
@@ -372,15 +373,20 @@ function p4bch() {
 # Prints given branch and its changelist
 function p4bstat() {
 	local BRANCH=$1
-	echo -e "`p4bch $BRANCH`\t$BRANCH"
+	if [ $2 ]; then
+		local CURRENT_SEPARATOR="* "
+	else
+		local CURRENT_SEPARATOR="  "
+	fi
+	echo -e "$CURRENT_SEPARATOR`p4bch $BRANCH` $BRANCH"
 }
 # Prints all branches and their changelists
 function p4bstatall() {
 	local P4BDIR="`p4bdir`"
 	local BRANCH_CURRENT="`cat $(p4bdir)/current`"
-	for branch in `l $P4BDIR -I current`; do
+	for branch in `ls $P4BDIR -t -I current`; do
 		if [ $branch = $BRANCH_CURRENT ]; then
-			p4bstat $branch | hlg
+			p4bstat $branch true | hlg
 		else
 			p4bstat $branch
 		fi
