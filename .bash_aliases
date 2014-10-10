@@ -25,6 +25,7 @@ alias disablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool true"
 alias e='vim'
 alias f='fg'
 alias findnonhidden='find . -type f \( ! -regex ".*/\..*" \)'
+alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
 alias lsnonhidden_tree='find . | grep -v "\/\." | less'
 alias lu='l ../'
 alias flatzip='zip -rj'
@@ -67,25 +68,25 @@ alias loginTimes="syslog -F raw -k Facility com.apple.system.lastlog | grep $USE
 # List directories only
 alias lsd="l | grep --color=none '.*/'"
 alias mysql_local="mysql --host=localhost -uroot -p"
-alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
-alias p4-describe="p4 describe -S -s"
-alias pserve='python -m SimpleHTTPServer'
-alias start_mysql='mysqld_safe &'
-alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
-alias sudo='sudo '
 # Prints out a bunch of local network devices and highlights device names
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
 alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
+alias p4-describe="p4 describe -S -s"
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
 alias p4root='p4 client -o | g "^Root:" | cut -f2'
 alias p4p="p4-pending-all | tac"
+alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
+alias pgl="pgrep -fl"
 alias psgrep='ps -ef | grep -v grep | grep -E'
 alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
+alias pserve='python -m SimpleHTTPServer'
 alias sleepTimes="pmset -g log | grep -iE '^.{24} sleep '"
 alias snt="sn \"s/\n\n\t/ /g\""
-alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
+alias start_mysql='mysqld_safe &'
+alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
+alias sudo='sudo '
 alias unblockRecent='sudo chattr -i ~/.local/share/recently-used.xbel'
 alias u='cd ..; ls -CF'
 alias ups='cd -P ..'
