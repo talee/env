@@ -137,6 +137,13 @@ function grepTo() {
 		echo "Nothing found."
 	fi
 }
+function fd() {
+	if [ $2 ]; then
+		find -H "$1" -type d -iname "$2"
+	else
+		find -H . -type d -iname "$1"
+	fi
+}
 function ff() {
 	if [ $2 ]; then
 		find -H "$1" -iname "$2"
