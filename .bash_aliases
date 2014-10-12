@@ -162,10 +162,17 @@ function ft() {
 	local RESULTS=$(find -H "$DIR" -iname "$TARGET" -print -quit)
 	echo $RESULTS
 	if [ $RESULTS ]; then
-		cd $(dirname $(echo "$RESULTS"))
+		if [ $3 ]; then
+			cd `echo "$RESULTS"`
+		else
+			cd $(dirname $(echo "$RESULTS"))
+		fi
 	else
 		echo "Nothing found."
 	fi
+}
+function gt {
+	ft "$1" "$2" true
 }
 function va() {
 	vim "$1" && git add "$1"
