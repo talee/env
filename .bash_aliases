@@ -275,7 +275,7 @@ function bak() {
 		local EXT=$2
 	fi
 	cp $1{,.$EXT}
-	l $1
+	l $1*
 }
 # Updates git repo
 function bae() {
