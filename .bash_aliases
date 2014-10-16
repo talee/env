@@ -270,7 +270,11 @@ function convertTextToPath() {
 	rm $TMP_FILE_NAME
 }
 function bak() {
-	mv $1{,.$2}
+	local EXT="bak"
+	if [ -z $2 ]; then
+		local EXT=$2
+	fi
+	cp $1{,.$2}
 }
 # Updates git repo
 function bae() {
