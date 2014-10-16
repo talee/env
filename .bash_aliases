@@ -271,7 +271,7 @@ function convertTextToPath() {
 }
 function bak() {
 	local EXT="bak"
-	if [ -z $2 ]; then
+	if [ $2 ]; then
 		local EXT=$2
 	fi
 	cp $1{,.$2}
