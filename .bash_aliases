@@ -274,7 +274,7 @@ function bak() {
 	if [ $2 ]; then
 		local EXT=$2
 	fi
-	cp $1{,.$2}
+	cp $1{,.$EXT}
 }
 # Updates git repo
 function bae() {
