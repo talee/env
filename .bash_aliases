@@ -73,6 +73,7 @@ alias mysql_local="mysql --host=localhost -uroot -p"
 alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
+alias p4change="p4 change `p4ch`"
 alias p4-describe="p4 describe -S -s"
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
 alias p4root='p4 client -o | g "^Root:" | cut -f2'
