@@ -231,8 +231,13 @@ function p4e() {
 # Similiar p4e except always uses most recent changelist
 function p4el() {
 	local EDIT="edit"
-	local CL=$(p4p | tail -1 | cutcl)
-	local P4ARGS="-c $CL `ff $1 $2`"
+	local CL=`p4ch`
+	if [ $2 ]; then
+		local FILE=`ff $1 $2`
+	else
+		local FILE=$1
+	fi
+	local P4ARGS="-c $CL $FILE"
 	local OUTPUT=`p4 $EDIT $P4ARGS 2>&1`
 	if [[ $OUTPUT =~ "reopen" ]]; then
 		local EDIT="reopen"
