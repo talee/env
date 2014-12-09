@@ -191,8 +191,11 @@ function p4change() {
 	p4 change `p4ch`
 }
 # Gets authors for some depot
+# $1 filename
+# $2 trailing path. "/..." for directory
 function p4authors() {
-	p4 filelog -s "//depot/iop/development/$1" | cut -d ' ' -f9 | sort
+	# Be aware of spaces or commands as filenames
+	p4 filelog -s $(find -H .  \( -path "*/build" -o -path "*/dist" -path "*/node_modules" \) -prune -o -iname $1 -printf "$(p4 where . | cut -d' ' -f1)/%P$2 ") | cut -s -d ' ' -f9 | sed -e 's/@.*$//' -e '/^\s*$/d' | sort | uniq -c | sort -r
 }
 # List pending changelists for given file name
 function p4pending() {
