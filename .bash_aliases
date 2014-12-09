@@ -152,6 +152,9 @@ function ff() {
 		find -H . -iname "$1"
 	fi
 }
+function ffp() {
+	find -H . -iname $@ -printf '%P\n'
+}
 function ft() {
 	local DIR="."
 	local TARGET="$2"
@@ -186,6 +189,10 @@ function ffv() {
 }
 function p4change() {
 	p4 change `p4ch`
+}
+# Gets authors for some depot
+function p4authors() {
+	p4 filelog -s "//depot/iop/development/$1" | cut -d ' ' -f9 | sort
 }
 # List pending changelists for given file name
 function p4pending() {
