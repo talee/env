@@ -50,7 +50,7 @@ export MYSQL_HOME=/Applications/MAMP/Library/
 export PATH=$PATH:/Applications/MAMP/bin/
 
 # Git
-export PATH=/usr/local/git/bin/:$PATH
+#export PATH=/usr/local/git/bin/:$PATH
 
 # Java
 export JAVA_HOME="$(java_home)"
