@@ -179,9 +179,9 @@ function ft() {
 function git-author-rewrite() {
 	git filter-branch --env-filter '
 	
-	OLD_EMAIL="'$1'"
-	CORRECT_NAME="'$2'"
-	CORRECT_EMAIL="'$3'"
+	OLD_EMAIL="'"$1"'"
+	CORRECT_NAME="'"$2"'"
+	CORRECT_EMAIL="'"$3"'"
 	
 	if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
 	then
