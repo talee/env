@@ -40,6 +40,7 @@ alias gfrestart='asadmin restart-domain domain1'
 alias gg='git'
 alias git-diffprev='git diff HEAD@{1}'
 alias git-show='git show --name-only'
+alias gitf='git fetch && git st'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
 alias gr='grep -irn'
