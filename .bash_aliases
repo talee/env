@@ -208,6 +208,9 @@ function ffb() {
 function ffv() {
 	vim `ff $@`
 }
+function portopen() {
+	lsof -i tcp:"$1"
+}
 function p4change() {
 	p4 change `p4ch`
 }
