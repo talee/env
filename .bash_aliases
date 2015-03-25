@@ -209,7 +209,7 @@ function ffv() {
 	vim `ff $@`
 }
 function portopen() {
-	lsof -i tcp:"$1"
+	sudo lsof -i tcp:"$@"
 }
 function p4change() {
 	p4 change `p4ch`
