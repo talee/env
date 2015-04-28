@@ -456,7 +456,7 @@ function p4bstatall() {
 	done
 }
 
-# User, date
+# User, date YYYY/MM/dd
 function p4-submitted() {
 	p4 changes -u $1 -s submitted -l @$2,@now
 }
