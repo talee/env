@@ -455,6 +455,12 @@ function p4bstatall() {
 		fi
 	done
 }
+
+# User, date
+function p4-submitted() {
+	p4 changes -u $1 -s submitted -l @$2,@now
+}
+
 # Highlight stdin in green
 function hlg() {
 	echo -en "\x1B[32m"
