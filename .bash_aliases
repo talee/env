@@ -471,6 +471,10 @@ function hlg() {
 	echo -en "\x1B[0m"
 }
 
+function wl() {
+	grunt --gruntfile ~/dev/Projects/https-watch-livereload/Gruntfile.js --baseConnectDir `pwd` --watchDir `pwd`
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
