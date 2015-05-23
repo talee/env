@@ -472,7 +472,7 @@ function hlg() {
 }
 
 function wl() {
-	grunt --gruntfile ~/Projects/intuit/https-watch-livereload/Gruntfile.js --baseConnectDir `pwd` --watchDir `pwd`
+	grunt --gruntfile ~/Projects/intuit/https-watch-livereload/Gruntfile.js --baseConnectDir `pwd` --watchDir `pwd` "$@"
 }
 
 
