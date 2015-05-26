@@ -474,6 +474,9 @@ function hlg() {
 function wl() {
 	grunt --gruntfile ~/Projects/intuit/https-watch-livereload/Gruntfile.js --baseConnectDir `pwd` --watchDir `pwd` "$@"
 }
+function wlp() {
+	wl --hostname 0.0.0.0
+}
 
 
 # ---------- END FUNCTIONS -------------------------
