@@ -54,6 +54,7 @@ alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chro
 alias gv='mvim'
 alias h='htop'
 alias hgcommitted='hg st --change -1'
+alias iojs='~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs'
 alias is='sudo iftop -i wlan0 -B'
 alias jdump='jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar'
 alias jfind="java -jar $HOME/Utilities/jarscan/jarscan.jar"
