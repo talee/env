@@ -483,11 +483,18 @@ function wlp() {
 }
 
 function fa() {
-	local FNAME=$2
+	local DIR=$1
+	shift
+	local FNAME=$1
+	shift
 	if [ -z $FNAME ]; then
 		local FNAME="*"
 	fi
-	find "$1" ! -path "$1" -iname "$FNAME" "$3" "$4" "$5" "$6"
+	local OPTS="$@"
+	if [ -z $OPTS ]; then
+		local OPTS=
+	fi
+	find "$DIR" ! -path "$DIR" "$OPTS" -iname "$FNAME" 
 }
 
 
