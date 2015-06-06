@@ -483,7 +483,7 @@ function wlp() {
 }
 
 function fa() {
-	find $1 ! -path $1 -iname $2
+	find "$1" ! -path "$1" -iname "$2"
 }
 
 
