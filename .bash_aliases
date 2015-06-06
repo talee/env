@@ -487,7 +487,7 @@ function fa() {
 	if [ -z $FNAME ]; then
 		local FNAME="*"
 	fi
-	find "$1" ! -path "$1" -iname "$FNAME"
+	find "$1" ! -path "$1" -iname "$FNAME" "$3" "$4" "$5" "$6"
 }
 
 
