@@ -482,6 +482,10 @@ function wlp() {
 	wl --hostname 0.0.0.0 "$@"
 }
 
+function fa() {
+	find $1 ! -path $1 -iname $2
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
