@@ -492,6 +492,10 @@ function fa() {
 	fi
 }
 
+function lmd() {
+	livedown start $@ --open
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
