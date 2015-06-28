@@ -9,6 +9,7 @@ alias ba='. ~/Dropbox/env/.bash_aliases'
 alias C='c'
 #alias c='g++ -Wall'
 alias chrome-blank="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
+alias chrome-blank-stable="/Applications/Google\ Chrome\ Stable.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-stable > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
 alias cl='clear'
 alias clipb='xargs echo -n | xclip -selection clip'
 alias convertDates="awk 'system(\"date -r\" \$1)'"
