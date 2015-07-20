@@ -34,7 +34,7 @@ alias g='grep --color=always -i'
 # Highlights name, version, description of apt-cache show. Also grep -v extras.
 alias ga='grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|Bugs" | grep -C 99 "Package: \w\+\|Version: .\+\|Description-\w\+: .\+"'
 alias gf='asadmin start-domain --debug=true domain1'
-alias gfc='pgrep -fl felix'
+alias gfs='pgrep -fl felix'
 alias gf='asadmin start-domain --debug=true domain1'
 alias gfstop='asadmin stop-domain domain1'
 alias gfrestart='asadmin restart-domain domain1'
