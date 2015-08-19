@@ -497,6 +497,15 @@ function lmd() {
 	livedown start $@ --open
 }
 
+function sleepMode {
+	# 0 - Old style - just goes to sleep.
+	# 1 - Only Hibernate
+	# 3 - Default - goes to sleep but writes RAM contents to disk just in case.
+	# 5 - Only Hibernate mode but if you use secure virtual memory.
+	# 7 - The Default but if you use secure virtual memory.
+	sudo pmset -a hibernatemode $@
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
