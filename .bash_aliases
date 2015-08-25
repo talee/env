@@ -82,6 +82,7 @@ alias npmlist='npm list --depth 0'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
 alias p4-describe="p4 describe -S -s"
+alias p4-log="p4 changes -s submitted -m 2 -l"
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
 alias p4root='p4 client -o | g "^Root:" | cut -f2'
 alias p4p="p4-pending-all | tac"
