@@ -27,6 +27,7 @@ alias disablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool true"
 alias e='vim'
 alias f='fg'
 alias findnonhidden='find . -type f \( ! -regex ".*/\..*" \)'
+alias findtextfiles='find . -type f -exec grep -Iq . {} \; -and -print'
 alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
 alias lsnonhidden_tree='find . | grep -v "\/\." | less'
 alias lu='l ../'
