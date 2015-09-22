@@ -84,6 +84,7 @@ alias npmlist='npm list --depth 0'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
 alias p4-ch-delete="p4 change -d"
+alias p4-cwd="p4 where ./ | sed 's/ \/\/.*$//'"
 alias p4-describe="p4 describe -S -s"
 # Usage: p4-log 2 build.xml
 alias p4-log="p4 changes -s submitted -l -m"
