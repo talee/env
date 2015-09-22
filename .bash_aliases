@@ -87,6 +87,7 @@ alias p4-ch-delete="p4 change -d"
 alias p4-describe="p4 describe -S -s"
 # Usage: p4-log 2 build.xml
 alias p4-log="p4 changes -s submitted -l -m"
+alias p4-movetoch="p4 reopen -c"
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
 alias p4root='p4 client -o | g "^Root:" | cut -f2'
 alias p4p="p4-pending-all | tac"
