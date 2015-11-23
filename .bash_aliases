@@ -50,7 +50,7 @@ alias gu='gulp'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
 alias gr='grep -irn'
-alias grb='gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=build'
+alias grb='gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build'
 alias grep='grep --color=always'
 alias grepi='grep -i --color=always'
 alias grepnc='grep --color=none'
