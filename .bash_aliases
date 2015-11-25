@@ -124,6 +124,25 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
+function generate_cert() {
+	#!/bin/sh
+	### Create ca.key, use a password phrase when asked
+	### When asked 'Common Name (e.g. server FQDN or YOUR name) []:' use your hostname, i.e 'mysite.dev'
+	openssl genrsa -des3 -out ca.key 2048
+	openssl req -new -key ca.key -out ca.csr
+	openssl x509 -req -days 730 -in ca.csr -out ca.crt -signkey ca.key
+
+	### Create server certificate
+	openssl genrsa -des3 -out server.key 2048
+	openssl req -new -key server.key -out server.csr
+
+	### Remove password from the certificate
+	cp server.key server.key.org
+	openssl rsa -in server.key.org -out server.key
+
+	### Generate self-siged certificate
+	openssl x509 -req -days 730 -in server.csr -signkey server.key -out server.crt
+}
 function appendsudo() {
 	sudo tee -a $1 > /dev/null
 }
