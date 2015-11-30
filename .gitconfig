@@ -20,7 +20,9 @@
 	default = simple
 	followTags = true
 [alias]
-	dc = diff --cached
+	l = log -2
+	ll = log
+	dc = diff --ignore-space-change --cached
 	dw = diff --ignore-space-change
 	st = status
 	cm = commit
