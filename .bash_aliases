@@ -188,7 +188,7 @@ function ff() {
 	fi
 }
 function ffe() {
-	ff "*.$@"
+	ff "*$@"
 }
 function ffp() {
 	find -H . -iname $@ -printf '%P\n'
