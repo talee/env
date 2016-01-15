@@ -362,9 +362,15 @@ function bak() {
 # Updates git repo
 function bae() {
 	v ~/Dropbox/env/.bash_aliases && ba
+	udpate_repo ~/Dropbox/env/
+}
+function wae() {
+	v ~/Projects/intuit/work-env/.work_bash_aliases.env && . ~/.work_bash_aliases.env
+	update_repo ~/Projects/intuit/work-env/
+}
+function update_repo() {
 	local WD=$PWD
-	cd ~/Dropbox/env/
-	git add -A
+	cd ""$1""
 	local DIFF_STAT=$(git status --porcelain)
 	git commit -m "Auto commit: $DIFF_STAT"
 	read -p "Push? " should_push
