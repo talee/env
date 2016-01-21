@@ -50,7 +50,7 @@ alias gu='gulp'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
 alias gr='grep -irn'
-alias grb='gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build'
+alias grb='gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild'
 alias grep='grep --color=always'
 alias grepi='grep -i --color=always'
 alias grepnc='grep --color=none'
@@ -362,7 +362,7 @@ function bak() {
 # Updates git repo
 function bae() {
 	v ~/Dropbox/env/.bash_aliases && ba
-	udpate_repo ~/Dropbox/env/
+	update_repo ~/Dropbox/env/
 }
 function wae() {
 	v ~/Projects/intuit/work-env/.work_bash_aliases.env && . ~/.work_bash_aliases.env
@@ -372,7 +372,7 @@ function update_repo() {
 	local WD=$PWD
 	cd ""$1""
 	local DIFF_STAT=$(git status --porcelain)
-	git commit -m "Auto commit: $DIFF_STAT"
+	git commit -am "Auto commit: $DIFF_STAT"
 	read -p "Push? " should_push
 	if [ "$should_push" == "y" ]
 	then
