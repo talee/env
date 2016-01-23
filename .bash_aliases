@@ -187,6 +187,9 @@ function ff() {
 		find -H . -iname "$1"
 	fi
 }
+function ffc() {
+	ff "*$1*"
+}
 function ffe() {
 	ff "*$@"
 }
