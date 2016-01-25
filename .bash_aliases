@@ -38,6 +38,7 @@ alias ga='grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|B
 alias gf='asadmin start-domain --debug=true domain1'
 alias gfl='asadmin list-applications'
 alias gfu='asadmin undeploy'
+alias gfd='asadmin deploy'
 alias gfs='pgrep -fl felix'
 alias gf='asadmin start-domain --debug=true domain1'
 alias gfstop='asadmin stop-domain domain1'
