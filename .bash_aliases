@@ -5,7 +5,7 @@
 alias astart="sudo apachectl start"
 alias astop="sudo apachectl stop"
 alias arestart="sudo apachectl restart"
-alias ba='. ~/Dropbox/env/.bash_aliases'
+alias ba='. ~/Projects/misc/env/.bash_aliases'
 alias C='c'
 #alias c='g++ -Wall'
 alias chrome-blank="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
@@ -94,7 +94,7 @@ alias p4-movetoch="p4 reopen -c"
 alias p4client='p4 client -o | g "^Client:" | cut -f2'
 alias p4root='p4 client -o | g "^Root:" | cut -f2'
 alias p4p="p4-pending-all | tac"
-alias poe='v ~/Dropbox/env/.profile && . ~/Dropbox/env/.profile'
+alias poe='v ~/Projects/misc/env/.profile && . ~/Projects/misc/env/.profile'
 alias pgl="pgrep -fl"
 alias psgrep='ps -ef | grep -v grep | grep -E'
 alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
@@ -366,8 +366,8 @@ function bak() {
 }
 # Updates git repo
 function bae() {
-	v ~/Dropbox/env/.bash_aliases && ba
-	update_repo ~/Dropbox/env/
+	v ~/Projects/misc/env/.bash_aliases && ba
+	update_repo ~/Projects/misc/env/
 }
 function wae() {
 	v ~/Projects/intuit/work-env/.work_bash_aliases.env && . ~/.work_bash_aliases.env
