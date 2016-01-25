@@ -20,17 +20,18 @@
 	default = simple
 	followTags = true
 [alias]
-	l = log -2
-	ll = log
-	dc = diff --ignore-space-change --cached
-	dw = diff --ignore-space-change
-	st = status
+	ch = checkout
 	cm = commit
 	cma = commit -a
-	ch = checkout
-	pop = stash pop
+	dc = diff --ignore-space-change --cached
+	dw = diff --ignore-space-change
+	dropnotindex = checkout -- .
 	incoming = log ..@{u}
+	l = log -2
+	ll = log
+	pop = stash pop
 	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+	st = status
 [filter "media"]
 	required = true
 	clean = git media clean %f
