@@ -245,7 +245,7 @@ function va() {
 	vim "$1" && git add "$1"
 }
 function ffb() {
-	find "$1" \( -path "*/build" -o -path "*/dist" \) -prune -o -iname "*$2*" -print
+	find "$1" \( -path "*/build" -o -path "*/dist" -o -path "*/gradleBuild" \) -prune -o -iname "*$2*" -print
 }
 function ffbui() {
 	find . ! -path "*/build/*" ! -path "*/bower_components/*" ! -path "*/node_modules/*" -iname "$@"
