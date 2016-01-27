@@ -24,6 +24,8 @@ alias diskspace="df -h | head -2 | grep -C 1 -i Gi"
 # Enables holding down a key to repeat in GUI apps; disables accent menu
 alias enablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool false"
 alias disablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool true"
+# Gets the authoritative name server for a given domain name
+alias dns_root='nslookup -type=soa'
 alias e='vim'
 alias f='fg'
 alias findnonhidden='find . -type f \( ! -regex ".*/\..*" \)'
