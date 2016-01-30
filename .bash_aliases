@@ -8,6 +8,7 @@ alias arestart="sudo apachectl restart"
 alias ba='. ~/Projects/misc/env/.bash_aliases'
 alias C='c'
 #alias c='g++ -Wall'
+alias g++d='g++ -Wall -g -O0'
 alias chrome-blank="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
 alias chrome-blank-beta="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-beta > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
 alias chrome-blank-stable="/Applications/Google\ Chrome\ Stable.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-stable > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
