@@ -552,6 +552,10 @@ function sleepMode {
 	sudo pmset -a hibernatemode $@
 }
 
+function xx {
+	$@ && exit
+}
+
 
 # ---------- END FUNCTIONS -------------------------
 if [ -f "$HOME/.work_bash_aliases.env" ]
