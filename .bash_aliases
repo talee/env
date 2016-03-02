@@ -132,7 +132,7 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function ccl() {
-	xargs $@ | curl -vsSD - > /dev/null
+	cat "$@" | xargs curl -vsSD - > /dev/null
 }
 function generate_cert() {
 	#!/bin/sh
