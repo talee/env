@@ -20,6 +20,7 @@
 	default = simple
 	followTags = true
 [alias]
+	br = branch
 	ch = checkout
 	cm = commit
 	cma = commit -a

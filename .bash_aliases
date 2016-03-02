@@ -131,6 +131,9 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
+function ccl() {
+	curl $@ -v -D - > /dev/null
+}
 function generate_cert() {
 	#!/bin/sh
 	### Create ca.key, use a password phrase when asked
