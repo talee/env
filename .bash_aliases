@@ -55,6 +55,7 @@ alias git-show='git show --name-only'
 alias git-pullrecurse='git submodule foreach git pull'
 alias gitf='git fetch && git st'
 alias gs='git st'
+alias gsn='git status --porcelain | cut -c4-'
 alias gu='gulp'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
