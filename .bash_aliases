@@ -19,6 +19,7 @@ alias copywd='pwd | tr -d \\n | pbcopy'
 alias copypwd='pwd -P | tr -d \\n | pbcopy'
 alias cutcl="cut -d' ' -f2 | tr -d \"\n\""
 alias cutclc="cutcl | pbcopy"
+alias curl-file='ccl -K'
 alias d='vim -d'
 #alias diskspace="df -h /dev/disk0s2/ | grep -C 2 '[0-9\.]\+[GM]\s\+[0-9]\+\%'"
 alias diskspace="df -h | head -2 | grep -C 1 -i Gi"
