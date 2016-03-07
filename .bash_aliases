@@ -96,6 +96,7 @@ alias mysql_local="mysql --host=localhost -uroot -p"
 # Prints out a bunch of local network devices and highlights device names
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
 alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
+alias nn='npm'
 alias npmlist='npm list --depth 0'
 alias p='python'
 alias p4ch='p4p | tail -1 | cut -d" " -f2'
