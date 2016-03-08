@@ -7,6 +7,7 @@ alias astop="sudo apachectl stop"
 alias arestart="sudo apachectl restart"
 alias ba='. ~/Projects/misc/env/.bash_aliases'
 alias bo='bower'
+alias bu='bower up'
 alias C='c'
 #alias c='g++ -Wall'
 alias g++d='g++ -Wall -g -O0'
