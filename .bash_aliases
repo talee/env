@@ -218,7 +218,7 @@ function ffc() {
 function ffe() {
 	ff "*$@"
 }
-function ffe() {
+function ffev() {
 	v `ffe "$@"`
 }
 function ffp() {
