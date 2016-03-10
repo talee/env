@@ -147,6 +147,9 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
+function gcb () {
+	gc `gb | head -"$1"`
+}
 function ccl() {
 	curl "$@" -vsSD - > /dev/null
 }
