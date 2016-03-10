@@ -52,6 +52,7 @@ alias gfstop='asadmin stop-domain domain1'
 alias gfrestart='asadmin restart-domain domain1'
 alias gg='git'
 alias gbh='git symbolic-ref --short HEAD'
+alias gbr='gb -m `gbh`'
 alias ggf='git diff-tree --no-commit-id --name-only -r'
 alias ggfh='git diff-tree --no-commit-id --name-only -r HEAD'
 alias gc='git ch'
@@ -149,7 +150,9 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function gcb () {
-	gc `gb | sed -n -e $1'{p;q}'`
+	if [ -n $1 ]; then
+		gc `gb | sed -n -e $1'{p;q}'`
+	fi
 }
 function ccl() {
 	curl "$@" -vsSD - > /dev/null
