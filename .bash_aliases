@@ -151,10 +151,9 @@ alias x='exit'
 
 
 function upd() {
-	bu &
-	nu &
-	wait
-	nn run postinstall
+	time bu &
+	time nu &
+	wait && time nn run postinstall
 }
 function gcb () {
 	if [ -n "$1" ]; then
