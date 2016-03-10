@@ -150,7 +150,7 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function gcb () {
-	if [ -n $1 ]; then
+	if [ -n "$1" ]; then
 		gc `gb | sed -n -e $1'{p;q}'`
 	fi
 }
