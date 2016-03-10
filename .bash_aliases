@@ -129,7 +129,6 @@ alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
 alias sudo='sudo '
 alias unblockRecent='sudo chattr -i ~/.local/share/recently-used.xbel'
 alias u='cd ..; ls -CF'
-alias upd='bu & nu & wait && nn run postinstall'
 alias ups='cd -P ..'
 alias up='cd ..'
 alias upl='cd ..; ls -CF'
@@ -150,6 +149,13 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
+
+function upd() {
+	bu &
+	nu &
+	wait
+	nn run postinstall
+}
 function gcb () {
 	if [ -n "$1" ]; then
 		gc `gb | sed -n -e $1'{p;q}'`
