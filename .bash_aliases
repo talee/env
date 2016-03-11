@@ -154,6 +154,7 @@ function upd() {
 	time bu &
 	time nu &
 	wait && time nn run postinstall
+	osascript -e 'display notification "upd done" with title "upd"'
 }
 function gcb () {
 	if [ -n "$1" ]; then
