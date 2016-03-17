@@ -67,7 +67,8 @@ alias git-pullrecurse='git submodule foreach git pull'
 alias gitf='git fetch && git st'
 alias gs='git st'
 # git status file names only
-alias gsn='git status --porcelain | cut -c4-'
+#alias gsn='git status --porcelain | cut -c4-'
+gsn() { git status --porcelain | cut -c4-; }
 alias gu='gulp'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
@@ -151,8 +152,7 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function vx() {
-	AA=$(shopt)
-	echo "$AA"
+	v `$@`
 }
 function upd() {
 	time bu &
