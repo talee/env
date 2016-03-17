@@ -150,7 +150,9 @@ alias tt='top -n0 -l1'
 alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
-
+function vx() {
+	v `$@`
+}
 function upd() {
 	time bu &
 	time nu &
