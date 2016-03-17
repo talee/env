@@ -151,7 +151,7 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function vx() {
-	AA=$(source ~/.bash_aliases && "$@")
+	AA=$(source ~/.bash_aliases)
 	echo "$AA"
 }
 function upd() {
