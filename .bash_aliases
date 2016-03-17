@@ -151,7 +151,7 @@ alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
 alias x='exit'
 
 function vx() {
-	`. ~/.bash_aliases && alias -p`
+	echo `. ~/.bash_aliases && alias -p`
 }
 function upd() {
 	time bu &
