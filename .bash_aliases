@@ -68,7 +68,7 @@ alias gitf='git fetch && git st'
 alias gs='git st'
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
-gsn() { git status --porcelain | cut -c4-; }
+gsn () { git status --porcelain | cut -c4-; }
 alias gu='gulp'
 alias gpg='gpg2'
 alias grave="echo -n '\`' | clipb"
