@@ -153,7 +153,7 @@ wakeTimes(){ pmset -g log | grep -iE '^.{24} wake ' "$@"; }
 x(){ exit "$@"; }
 
 function vx() {
-	v `$@`
+	v `"$@"`
 }
 function upd() {
 	time bu &
