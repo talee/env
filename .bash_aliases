@@ -2,154 +2,154 @@
 # Mac aliases
 # tac for example requires coreutils
 
-alias astart="sudo apachectl start"
-alias astop="sudo apachectl stop"
-alias arestart="sudo apachectl restart"
-alias ba='. ~/Projects/misc/env/.bash_aliases'
-alias bo='bower'
-alias bu='bower up'
-alias bi='bower i'
-alias C='c'
+astart(){ sudo apachectl start; }
+astop(){ sudo apachectl stop; }
+arestart(){ sudo apachectl restart; }
+ba(){ . ~/Projects/misc/env/.bash_aliases; }
+bo(){ bower; }
+bu(){ bower up; }
+bi(){ bower i; }
+C(){ c; }
 #alias c='g++ -Wall'
-alias g++d='g++ -Wall -g -O0'
-alias chrome-blank="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
-alias chrome-blank-beta="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-beta > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
-alias chrome-blank-stable="/Applications/Google\ Chrome\ Stable.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-stable > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized"
-alias cl='clear'
-alias clipb='xargs echo -n | xclip -selection clip'
-alias convertDates="awk 'system(\"date -r\" \$1)'"
-alias copywd='pwd | tr -d \\n | pbcopy'
-alias copypwd='pwd -P | tr -d \\n | pbcopy'
-alias cutcl="cut -d' ' -f2 | tr -d \"\n\""
-alias cutclc="cutcl | pbcopy"
-alias curl-file='ccl -K'
-alias d='vim -d'
+g++d(){ g++ -Wall -g -O0; }
+chrome-blank(){ /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized; }
+chrome-blank-beta(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-beta > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized; }
+chrome-blank-stable(){ /Applications/Google\ Chrome\ Stable.app/Contents/MacOS/Google\ Chrome --user-data-dir=$HOME/temp/chrome-stable > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized; }
+cl(){ clear; }
+clipb(){ xargs echo -n | xclip -selection clip; }
+convertDates(){ awk 'system(\"date -r\" \$1)'; }
+copywd(){ pwd | tr -d \\n | pbcopy; }
+copypwd(){ pwd -P | tr -d \\n | pbcopy; }
+cutcl(){ cut -d' ' -f2 | tr -d \"\n\"; }
+cutclc(){ cutcl | pbcopy; }
+curl-file(){ ccl -K; }
+d(){ vim -d; }
 #alias diskspace="df -h /dev/disk0s2/ | grep -C 2 '[0-9\.]\+[GM]\s\+[0-9]\+\%'"
-alias diskspace="df -h | head -2 | grep -C 1 -i Gi"
+diskspace(){ df -h | head -2 | grep -C 1 -i Gi; }
 # Enables holding down a key to repeat in GUI apps; disables accent menu
-alias enablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool false"
-alias disablekeyrepeat="defaults write -g ApplePressAndHoldEnabled -bool true"
+enablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool false; }
+disablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool true; }
 # Gets the authoritative name server for a given domain name
-alias dns_root='nslookup -type=soa'
-alias e='vim'
-alias f='fg'
-alias findnonhidden='find . -type f \( ! -regex ".*/\..*" \)'
-alias findtextfiles='find . -type f -exec grep -Iq . {} \; -and -print'
-alias FIRE_LAZER_SYMANTEC="sudo killall SymAutoProtect navx"
-alias lsnonhidden_tree='find . | grep -v "\/\." | less'
-alias lu='l ../'
-alias flatzip='zip -rj'
-alias g='grep --color=always -i'
+dns_root(){ nslookup -type=soa; }
+e(){ vim; }
+f(){ fg; }
+findnonhidden(){ find . -type f \( ! -regex ".*/\..*" \); }
+findtextfiles(){ find . -type f -exec grep -Iq . {} \; -and -print; }
+FIRE_LAZER_SYMANTEC(){ sudo killall SymAutoProtect navx; }
+lsnonhidden_tree(){ find . | grep -v "\/\." | less; }
+lu(){ l ../; }
+flatzip(){ zip -rj; }
+g(){ grep --color=always -i; }
 # Highlights name, version, description of apt-cache show. Also grep -v extras.
-alias ga='grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|Bugs" | grep -C 99 "Package: \w\+\|Version: .\+\|Description-\w\+: .\+"'
-alias gf='asadmin start-domain --debug=true domain1'
-alias gfl='asadmin list-applications'
-alias gfu='asadmin undeploy'
-alias gfd='asadmin deploy'
-alias gfs='pgrep -fl felix'
-alias gf='asadmin start-domain --debug=true domain1'
-alias gfstop='asadmin stop-domain domain1'
-alias gfrestart='asadmin restart-domain domain1'
-alias gg='git'
-alias gbh='git symbolic-ref --short HEAD'
-alias gbr='gb -m `gbh`'
-alias ggf='git diff-tree --no-commit-id --name-only -r'
-alias ggfh='git diff-tree --no-commit-id --name-only -r HEAD'
-alias gc='git ch'
-alias gcm='git cm'
-alias gb='git br'
-alias gdw='git dw'
-alias gl='git l'
-alias git-cleanf='git clean -f'
-alias git-diffprev='git diff HEAD@{1}'
-alias git-show='git show --name-only'
-alias git-pullrecurse='git submodule foreach git pull'
-alias gitf='git fetch && git st'
-alias gs='git st'
+ga(){ grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|Bugs" | grep -C 99 "Package: \w\+\|Version: .\+\|Description-\w\+: .\+"; }
+gf(){ asadmin start-domain --debug=true domain1; }
+gfl(){ asadmin list-applications; }
+gfu(){ asadmin undeploy; }
+gfd(){ asadmin deploy; }
+gfs(){ pgrep -fl felix; }
+gf(){ asadmin start-domain --debug=true domain1; }
+gfstop(){ asadmin stop-domain domain1; }
+gfrestart(){ asadmin restart-domain domain1; }
+gg(){ git; }
+gbh(){ git symbolic-ref --short HEAD; }
+gbr(){ gb -m `gbh`; }
+ggf(){ git diff-tree --no-commit-id --name-only -r; }
+ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD; }
+gc(){ git ch; }
+gcm(){ git cm; }
+gb(){ git br; }
+gdw(){ git dw; }
+gl(){ git l; }
+git-cleanf(){ git clean -f; }
+git-diffprev(){ git diff HEAD@{1}; }
+git-show(){ git show --name-only; }
+git-pullrecurse(){ git submodule foreach git pull; }
+gitf(){ git fetch && git st; }
+gs(){ git st; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
 gsn(){ git status --porcelain | cut -c4-; }
-alias gu='gulp'
-alias gpg='gpg2'
-alias grave="echo -n '\`' | clipb"
-alias gr='grep -irn'
-alias grb='gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude="*.map"'
-alias grbl='grb --exclude-dir=logs'
-alias grep='grep --color=always'
-alias grepi='grep -i --color=always'
-alias grepnc='grep --color=none'
-alias grepTimes='grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[0-9]\{10\}"'
-alias godocServer='godoc -http=:6060 & open http://localhost:6060/pkg/'
-alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=remote-profile'
-alias gv='mvim'
-alias h='htop'
-alias hgcommitted='hg st --change -1'
-alias iojs='~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs'
-alias is='sudo iftop -i wlan0 -B'
-alias jdump='jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar'
-alias jfind="java -jar $HOME/Utilities/jarscan/jarscan.jar"
-alias ju='java org.junit.runner.JUnitCore'
-alias lc='ls -F -C1'
-alias less='less -FSRX'
-alias ll='ls -alF'
-alias la='ls -ACF'
-alias l='ls -CF'
-alias lh='ls -gohF'
+gu(){ gulp; }
+gpg(){ gpg2; }
+grave(){ echo -n '\`' | clipb; }
+gr(){ grep -irn; }
+grb(){ gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude="*.map"; }
+grbl(){ grb --exclude-dir=logs; }
+grep(){ grep --color=always; }
+grepi(){ grep -i --color=always; }
+grepnc(){ grep --color=none; }
+grepTimes(){ grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[0-9]\{10\}"; }
+godocServer(){ godoc -http=:6060 & open http://localhost:6060/pkg/; }
+chrome-debug(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=remote-profile; }
+gv(){ mvim; }
+h(){ htop; }
+hgcommitted(){ hg st --change -1; }
+iojs(){ ~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs; }
+is(){ sudo iftop -i wlan0 -B; }
+jdump(){ jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar; }
+jfind(){ java -jar $HOME/Utilities/jarscan/jarscan.jar; }
+ju(){ java org.junit.runner.JUnitCore; }
+lc(){ ls -F -C1; }
+less(){ less -FSRX; }
+ll(){ ls -alF; }
+la(){ ls -ACF; }
+l(){ ls -CF; }
+lh(){ ls -gohF; }
 # List hidden files with their sizes
-alias lha='ls -agohF'
-alias loginTimes="syslog -F raw -k Facility com.apple.system.lastlog | grep $USER | grep -v tty"
+lha(){ ls -agohF; }
+loginTimes(){ syslog -F raw -k Facility com.apple.system.lastlog | grep $USER | grep -v tty; }
 # List directories only
-alias lsd="l | grep --color=none '.*/'"
-alias mysql_local="mysql --host=localhost -uroot -p"
+lsd(){ l | grep --color=none '.*/'; }
+mysql_local(){ mysql --host=localhost -uroot -p; }
 # Prints out a bunch of local network devices and highlights device names
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
-alias networknames='~/Projects/local-netbios-awk/getNetBIOS.sh'
-alias nn='npm'
-alias ni='npm i'
-alias nu='npm up'
-alias npmlist='npm list --depth 0'
-alias p='python'
-alias p4ch='p4p | tail -1 | cut -d" " -f2'
-alias p4-ch-delete="p4 change -d"
-alias p4-cwd="p4 where ./ | sed 's/ \/\/.*$//'"
-alias p4-describe="p4 describe -S -s"
+networknames(){ ~/Projects/local-netbios-awk/getNetBIOS.sh; }
+nn(){ npm; }
+ni(){ npm i; }
+nu(){ npm up; }
+npmlist(){ npm list --depth 0; }
+p(){ python; }
+p4ch(){ p4p | tail -1 | cut -d" " -f2; }
+p4-ch-delete(){ p4 change -d; }
+p4-cwd(){ p4 where ./ | sed 's/ \/\/.*$//'; }
+p4-describe(){ p4 describe -S -s; }
 # Usage: p4-log 2 build.xml
-alias p4-log="p4 changes -s submitted -l -m"
-alias p4-movetoch="p4 reopen -c"
-alias p4client='p4 client -o | g "^Client:" | cut -f2'
-alias p4root='p4 client -o | g "^Root:" | cut -f2'
-alias p4p="p4-pending-all | tac"
-alias poe='v ~/Projects/misc/env/.profile && . ~/Projects/misc/env/.profile'
-alias pgl="pgrep -fl"
-alias psgrep='ps -ef | grep -v grep | grep -E'
-alias psgrepnc='ps -ef | grep -v grep | grepnc -E'
-alias pserve='python -m SimpleHTTPServer'
-alias sleepTimes="pmset -g log | grep -iE '^.{24} sleep '"
-alias snt="sn \"s/\n\n\t/ /g\""
-alias start_mysql='mysqld_safe &'
-alias stop_mysql='mysqladmin shutdown -hlocalhost -uroot -p'
-alias sudo='sudo '
-alias unblockRecent='sudo chattr -i ~/.local/share/recently-used.xbel'
-alias u='cd ..; ls -CF'
-alias ups='cd -P ..'
-alias up='cd ..'
-alias upl='cd ..; ls -CF'
-alias upp='cd ../../'
-alias uppp='cd ../../../'
-alias upppp='cd ../../../../'
-alias v='mvim -v'
-alias vs='v -O'
-alias vv='vim ~/.vimrc'
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
-alias o='open "'.'"'
-alias op='open'
-alias lastC='l -C1 -t | head -1'
-alias r='vim -Mn'
-alias ro='vim -M'
-alias te='open -a TextEdit'
-alias tt='top -n0 -l1'
-alias wakeTimes="pmset -g log | grep -iE '^.{24} wake '"
-alias x='exit'
+p4-log(){ p4 changes -s submitted -l -m; }
+p4-movetoch(){ p4 reopen -c; }
+p4client(){ p4 client -o | g "^Client:" | cut -f2; }
+p4root(){ p4 client -o | g "^Root:" | cut -f2; }
+p4p(){ p4-pending-all | tac; }
+poe(){ v ~/Projects/misc/env/.profile && . ~/Projects/misc/env/.profile; }
+pgl(){ pgrep -fl; }
+psgrep(){ ps -ef | grep -v grep | grep -E; }
+psgrepnc(){ ps -ef | grep -v grep | grepnc -E; }
+pserve(){ python -m SimpleHTTPServer; }
+sleepTimes(){ pmset -g log | grep -iE '^.{24} sleep '; }
+snt(){ sn \"s/\n\n\t/ /g\"; }
+start_mysql(){ mysqld_safe & }
+stop_mysql(){ mysqladmin shutdown -hlocalhost -uroot -p; }
+sudo(){ sudo ; }
+unblockRecent(){ sudo chattr -i ~/.local/share/recently-used.xbel; }
+u(){ cd ..; ls -CF; }
+ups(){ cd -P ..; }
+up(){ cd ..; }
+upl(){ cd ..; ls -CF; }
+upp(){ cd ../../; }
+uppp(){ cd ../../../; }
+upppp(){ cd ../../../../; }
+v(){ mvim -v; }
+vs(){ v -O; }
+vv(){ vim ~/.vimrc; }
+vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc; }
+o(){ open "'.'"; }
+op(){ open; }
+lastC(){ l -C1 -t | head -1; }
+r(){ vim -Mn; }
+ro(){ vim -M; }
+te(){ open -a TextEdit; }
+tt(){ top -n0 -l1; }
+wakeTimes(){ pmset -g log | grep -iE '^.{24} wake '; }
+x(){ exit; }
 
 function vx() {
 	v `$@`
