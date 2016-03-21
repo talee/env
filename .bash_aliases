@@ -109,6 +109,7 @@ mysql_local(){ mysql --host=localhost -uroot -p "$@"; }
 networknames(){ ~/Projects/local-netbios-awk/getNetBIOS.sh "$@"; }
 nn(){ npm "$@"; }
 ni(){ npm i "$@"; }
+nrm(){ npm rm "$@"; }
 nu(){ npm up "$@"; }
 npmlist(){ npm list --depth 0 "$@"; }
 p(){ python "$@"; }
