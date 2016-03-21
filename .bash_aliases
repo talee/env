@@ -320,7 +320,7 @@ function p4pending() {
 	p4 changes -s pending -u "$P4USER" -c `p4filech`
 }
 function c() {
-	if [ $# = 1 && -f "$1" ]; then
+	if [ $# = 1 ] && [ -f "$1" ]; then
 		v "$1"
 	else
 		cd "$@" && l
