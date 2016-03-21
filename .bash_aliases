@@ -50,6 +50,7 @@ gfs(){ pgrep -fl felix "$@"; }
 gf(){ asadmin start-domain --debug=true domain1 "$@"; }
 gfstop(){ asadmin stop-domain domain1 "$@"; }
 gfrestart(){ asadmin restart-domain domain1 "$@"; }
+gdc(){ git dc "$@"; }
 gg(){ git "$@"; }
 gga() { git add "$@"; }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
