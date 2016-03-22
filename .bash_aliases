@@ -153,6 +153,7 @@ ro(){ vim -M "$@"; }
 te(){ open -a TextEdit "$@"; }
 tt(){ top -n0 -l1 "$@"; }
 wakeTimes(){ pmset -g log | grep -iE '^.{24} wake ' "$@"; }
+whichsym() { readlink -f `which "$@"`; }
 x(){ exit "$@"; }
 
 function print256colors() {
