@@ -77,7 +77,7 @@ grave(){ echo -n '\`' | clipb "$@"; }
 gr(){ grep -irn "$@"; }
 grb(){ gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude="*.map" "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
-grep(){ grep --color=always "$@"; }
+grep(){ `which grep` --color=always "$@"; }
 grepi(){ grep -i --color=always "$@"; }
 grepnc(){ grep --color=none "$@"; }
 grepTimes(){ grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[0-9]\{10\}" "$@"; }
