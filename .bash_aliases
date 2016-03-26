@@ -68,7 +68,7 @@ git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
 git-view(){
-	local FILENAME = `ffebui "$2"`
+	local FILENAME=`ffebui "$2"`
 	git show "$1":"$FILENAME" | r --c "file $FILENAME" -c "filetype detect" -;
 }
 git-viewlast(){ git-view HEAD~1 "$1"; }
