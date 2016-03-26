@@ -259,7 +259,7 @@ function fd() {
 }
 # find file suffix in any given subdirectory 
 function ff() {
-	if [ $2 ]; then
+	if [ $# = 2 ]; then
 		if [ -d "$1" ]; then
 			local DIR_ARGS="$1"
 		else
@@ -267,7 +267,7 @@ function ff() {
 		fi
 		eval find -H . "$DIR_ARGS"
 	else
-		find -H . -iname "$1"
+		find -H . -iname "$@"
 	fi
 }
 function ffc() {
@@ -337,7 +337,7 @@ function ffebui() {
 	ffbui "*$@"
 }
 function ffv() {
-	vim "`ff $@`"
+	vim `ff "$@"`
 }
 function portopen() {
 	sudo lsof -sTCP:LISTEN -i:"$@"
