@@ -252,14 +252,15 @@ function fd() {
 		find -H . -type d -iname "$1"
 	fi
 }
+# find file suffix in any given subdirectory 
 function ff() {
 	if [ $2 ]; then
 		if [ -d "$1" ]; then
-			local ROOT_DIR="$1"
+			local DIR_ARGS="$1"
 		else
-			local ROOT_DIR=`fd "$1"`
+			local DIR_ARGS="'-iregex' '.*$1.*/.*$2'"
 		fi
-		find -H "$ROOT_DIR" -iname "$2"
+		eval find -H . "$DIR_ARGS"
 	else
 		find -H . -iname "$1"
 	fi
