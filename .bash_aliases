@@ -312,7 +312,7 @@ function ffbui() {
 	find . ! -path "*/build/*" ! -path "*/bower_components/*" ! -path "*/node_modules/*" -iname "$@"
 }
 function ffebui() {
-	ffebui "*$@"
+	ffbui "*$@"
 }
 function ffv() {
 	vim `ff $@`
