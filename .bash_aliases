@@ -65,7 +65,7 @@ gl(){ git l "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
-git-view(){ git show "$1":`ffbui "$2"` | v -; }
+git-view(){ git show "$1":`ffbui "$2"` | r -; }
 git-viewlast(){ git-view HEAD~1 "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
 gitf(){ git fetch && git st "$@"; }
