@@ -183,7 +183,7 @@ function upd() {
 }
 function gcb () {
 	if [ -n "$1" ]; then
-		gc `gb | sed -n -e $1'{p;q}'`
+		gc `gb | sed -n -e "$1"'{p;q}'`
 	else
 		gb
 	fi
