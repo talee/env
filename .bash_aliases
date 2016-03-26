@@ -71,7 +71,7 @@ git-view(){
 	local FILENAME=`ffebui "$2"`
 	git show "$1":"$FILENAME" | r --cmd "file $FILENAME" -c "filetype detect" -;
 }
-git-viewlast(){ git-view HEAD~1 "$1"; }
+git-viewlast(){ git-view "HEAD~1" "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
 gitf(){ git fetch && git st "$@"; }
 gs(){ git st "$@"; }
