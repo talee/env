@@ -266,8 +266,10 @@ function ff() {
 			local DIR_ARGS="'-iregex' '.*$1.*/.*$2'"
 		fi
 		eval find -H . "$DIR_ARGS"
+	elif [ $# = 1 ]; then
+		find -H . -iname "$1"
 	else
-		find -H . -iname "$@"
+		find -H . "$@"
 	fi
 }
 function ffc() {
