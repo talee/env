@@ -147,6 +147,7 @@ pgl(){ pgrep -fl "$@"; }
 psgrep(){ ps -ef | grep -v grep | grep -E "$@"; }
 psgrepnc(){ ps -ef | grep -v grep | grepnc -E "$@"; }
 pserve(){ python -m SimpleHTTPServer "$@"; }
+sel() { sed -ne "$1{p;q}"; }
 sleepTimes(){ pmset -g log | grep -iE '^.{24} sleep ' "$@"; }
 snt(){ sn \"s/\n\n\t/ /g\" "$@"; }
 start_mysql(){ mysqld_safe & }
