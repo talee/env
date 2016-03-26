@@ -337,6 +337,12 @@ function ffbui() {
 function ffebui() {
 	ffbui "*$@"
 }
+function ffvs() {
+	vim -O `ff "$@"`
+}
+function ffvss() {
+	vim -o `ff "$@"`
+}
 function ffv() {
 	vim `ff "$@"`
 }
