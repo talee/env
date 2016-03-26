@@ -69,7 +69,7 @@ git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
 git-view(){
 	local FILENAME=`ffebui "$2"`
-	git show "$1":"$FILENAME" | r --cmd "file ._$FILENAME" -c "filetype detect" -;
+	git show "$1":"$FILENAME" | r -c "file ._$FILENAME | filetype detect" -;
 }
 git-viewlast(){ git-view "HEAD~1" "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
