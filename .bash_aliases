@@ -61,7 +61,13 @@ ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gc(){ git ch "$@"; }
 gcm(){ git cm "$@"; }
-gb(){ git br "$@" | nl; }
+gb(){
+	if [ "$#" != 1 ]; then
+		git br "$@";
+	else
+		git br "$@" | nl;
+	fi
+}
 gdw(){ git dw "$@"; }
 gl(){ git l "$@"; }
 git-cleanf(){ git clean -f "$@"; }
