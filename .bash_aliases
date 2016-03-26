@@ -62,7 +62,8 @@ ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gc(){ git ch "$@"; }
 gcm(){ git cm "$@"; }
 gb(){
-	if [ $# -gt 0 ]; then
+	# don't pipe to nl if command is part of a pipe
+	if [ $# -gt 0 ] || [ ! -t 1 ]; then
 		git br "$@";
 	else
 		git br | nl;
