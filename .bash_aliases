@@ -70,6 +70,10 @@ gb(){
 		git br | nl;
 	fi
 }
+# Robust printing of all local refs in git
+gb-shell() {
+git for-each-ref --format='%(refname:short)' refs/heads/
+}
 gdw(){ git dw "$@"; }
 gl(){ git l "$@"; }
 git-cleanf(){ git clean -f "$@"; }
@@ -185,7 +189,7 @@ function upd() {
 }
 function gcb () {
 	if [ -n "$1" ]; then
-		gc `gb | sed -n -e "$1"'{p;q}'`
+		gc `gb-shell | sed -n -e "$1"'{p;q}'`
 	else
 		gb
 	fi
