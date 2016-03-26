@@ -60,7 +60,7 @@ gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
 ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
-groot() { cd `git rev-parse --show-cdup "$@"`; }
+groo() { cd `git rev-parse --show-cdup "$@"`; }
 gc(){ git ch "$@"; }
 gcm(){ git cm "$@"; }
 gb(){
