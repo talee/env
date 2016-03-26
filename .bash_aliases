@@ -67,7 +67,10 @@ gl(){ git l "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
-git-view(){ git show "$1":`ffbui "$2"` | r -; }
+git-view(){
+	local FILENAME = `ffebui "$2"`
+	git show "$1":"$FILENAME" | r --c "file $FILENAME" -c "filetype detect" -;
+}
 git-viewlast(){ git-view HEAD~1 "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
 gitf(){ git fetch && git st "$@"; }
@@ -307,6 +310,9 @@ function ffb() {
 }
 function ffbui() {
 	find . ! -path "*/build/*" ! -path "*/bower_components/*" ! -path "*/node_modules/*" -iname "$@"
+}
+function ffebui() {
+	ffebui "*$@"
 }
 function ffv() {
 	vim `ff $@`
