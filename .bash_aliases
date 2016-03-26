@@ -62,10 +62,10 @@ ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gc(){ git ch "$@"; }
 gcm(){ git cm "$@"; }
 gb(){
-	if [ "$#" != 1 ]; then
+	if [ $# -gt 0 ]; then
 		git br "$@";
 	else
-		git br "$@" | nl;
+		git br | nl;
 	fi
 }
 gdw(){ git dw "$@"; }
