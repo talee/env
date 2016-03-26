@@ -108,7 +108,7 @@ jdump(){ jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar "$@"; }
 jfind(){ java -jar $HOME/Utilities/jarscan/jarscan.jar "$@"; }
 ju(){ java org.junit.runner.JUnitCore "$@"; }
 lc(){ ls -F -C1 "$@"; }
-less(){ less -FSRX "$@"; }
+less(){ `which less` -FSRX "$@"; }
 ll(){ ls -alF "$@"; }
 la(){ ls -ACF "$@"; }
 l(){ ls -CF "$@"; }
