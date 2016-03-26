@@ -254,7 +254,12 @@ function fd() {
 }
 function ff() {
 	if [ $2 ]; then
-		find -H "$1" -iname "$2"
+		if [ -d "$1" ]; then
+			local ROOT_DIR="$1"
+		else
+			local ROOT_DIR=`fd "$1"`
+		fi
+		find -H "$ROOT_DIR" -iname "$2"
 	else
 		find -H . -iname "$1"
 	fi
