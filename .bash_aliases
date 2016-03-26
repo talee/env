@@ -71,9 +71,8 @@ gb(){
 	fi
 }
 # Robust printing of all local refs in git
-gb-shell() {
-git for-each-ref --format='%(refname:short)' refs/heads/
-}
+gb-shell() { git for-each-ref --format='%(refname:short)' refs/heads/; }
+gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
 gdw(){ git dw "$@"; }
 gl(){ git l "$@"; }
 git-cleanf(){ git clean -f "$@"; }
