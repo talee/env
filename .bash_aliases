@@ -62,6 +62,7 @@ ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gro() { cd `git rev-parse --show-cdup "$@"`; }
 gc(){ git ch "$@"; }
+gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
 gcm(){ git cm "$@"; }
 gb(){
 	# don't pipe to nl if command is part of a pipe
