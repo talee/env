@@ -345,7 +345,7 @@ function ffvss() {
 	vim -o `ff "$@"`
 }
 function ffv() {
-	vim `ff "$@"`
+	vim `ff "${@}"`
 }
 function portopen() {
 	sudo lsof -sTCP:LISTEN -i:"$@"
