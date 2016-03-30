@@ -345,7 +345,11 @@ function ffvss() {
 	vim -o `ff "$@"`
 }
 function ffv() {
-	vim `ff "${@}"`
+	if [ $# = 1 ]; then
+		vim `ff "$1"`
+	else
+		vim `ff "$1" "${@:1}"`
+	fi
 }
 function portopen() {
 	sudo lsof -sTCP:LISTEN -i:"$@"
