@@ -261,11 +261,11 @@ function fd() {
 # find file suffix in any given subdirectory 
 function ff() {
 	if [ $# = 2 ]; then
-		if [ -d "$1" ]; then
-			local DIR_ARGS="$1"
-		else
+		#if [ -d "$1" ]; then
+		#	local DIR_ARGS="$1"
+		#else
 			local DIR_ARGS="'-iregex' '.*$1.*/.*$2'"
-		fi
+		#fi
 		eval find -H . "$DIR_ARGS"
 	else
 		# find [args...] name of target
