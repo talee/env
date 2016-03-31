@@ -55,6 +55,7 @@ gfstop(){ asadmin stop-domain domain1 "$@"; }
 gfrestart(){ asadmin restart-domain domain1 "$@"; }
 gdc(){ git dc "$@"; }
 gg(){ git "$@"; }
+ggs(){ git stash "$@"; }
 gga() { git add "$@"; }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
