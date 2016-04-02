@@ -135,6 +135,7 @@ nrm(){ npm rm "$@"; }
 nu(){ npm up "$@"; }
 npmlist(){ npm list --depth 0 "$@"; }
 p(){ python "$@"; }
+pw() { pwd "$@"; }
 p4ch(){ p4p | tail -1 | cut -d" " -f2 "$@"; }
 p4-ch-delete(){ p4 change -d "$@"; }
 p4-cwd(){ p4 where ./ | sed 's/ \/\/.*$//' "$@"; }
