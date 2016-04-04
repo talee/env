@@ -351,7 +351,6 @@ function ffv() {
 	if [ $# = 1 ]; then
 		vim `ff "$1"`
 	else
-		echo "${@:1}"
 		vim `ff "$1" "${@:2}"`
 	fi
 }
