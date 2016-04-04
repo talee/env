@@ -352,7 +352,7 @@ function ffv() {
 		vim `ff "$1"`
 	else
 		echo "${@:1}"
-		vim `ff "$1" "${@:1}"`
+		vim `ff "$1" "${@:2}"`
 	fi
 }
 function portopen() {
