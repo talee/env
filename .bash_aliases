@@ -267,7 +267,7 @@ function ff() {
 		#if [ -d "$1" ]; then
 		#	local DIR_ARGS="$1"
 		#else
-			local DIR_ARGS="'-iregex' '.*$1.*/.*$2'"
+			local DIR_ARGS="'-iregex' '."'*'"$1."'*/.*'"$2""'"
 		#fi
 		eval find -H . "$DIR_ARGS"
 	else
