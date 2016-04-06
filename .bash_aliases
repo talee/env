@@ -93,6 +93,7 @@ gs(){ git st "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
 gsn(){ git status --porcelain | cut -c4- "$@"; }
+gsnn(){ gsn "$@" | nl; }
 gu(){ gulp "$@"; }
 gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
