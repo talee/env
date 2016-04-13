@@ -643,8 +643,9 @@ function fa() {
 }
 
 function lmd() {
-	trap 'echo lol && livedown stop' EXIT
-	livedown start $@ --open
+	livedown start $@ --open &
+	wait '%-'
+	livedown stop
 }
 
 function sleepMode {
