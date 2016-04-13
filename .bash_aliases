@@ -643,9 +643,9 @@ function fa() {
 }
 
 function lmd() {
-	livedown start $@ --open & > /dev/null
+	livedown start $@ --open &
 	wait '%-'
-	livedown stop > /dev/null
+	livedown stop
 }
 
 function sleepMode {
