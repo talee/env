@@ -79,6 +79,7 @@ gb-shell() { git for-each-ref --format='%(refname:short)' refs/heads/; }
 gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
 gdw(){ git dw "$@"; }
 gl(){ git l "$@"; }
+gla(){ gl --abbrev-commit "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
