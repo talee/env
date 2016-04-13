@@ -643,6 +643,7 @@ function fa() {
 }
 
 function lmd() {
+	trap 'livedown stop' SIGINT
 	livedown start $@ --open
 }
 
