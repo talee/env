@@ -643,7 +643,7 @@ function fa() {
 }
 
 function lmd() {
-	trap 'echo lol && livedown stop' SIGINT SIGTERM
+	trap 'echo lol && livedown stop' EXIT
 	livedown start $@ --open
 }
 
