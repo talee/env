@@ -57,6 +57,8 @@ gdc(){ git dc "$@"; }
 gg(){ git "$@"; }
 ggr(){ git reset "$@"; }
 ggs(){ git stash "$@"; }
+ggsh() { git show "$@"; }
+ggsu() { git show stash@{"$1"}^3 "${@:2}"; }
 gga() { git add "$@"; }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
