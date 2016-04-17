@@ -642,10 +642,9 @@ function fa() {
 	fi
 }
 
+# Patched livedown with process.on('SIGTERM', _ => server.stop())
 function lmd() {
-	(livedown start $@ --open) &
-	wait '%-'
-	livedown stop
+	livedown start $@ --open
 }
 
 function sleepMode {
