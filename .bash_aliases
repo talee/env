@@ -643,7 +643,7 @@ function fa() {
 }
 
 function lmd() {
-	livedown start $@ --open &
+	(livedown start $@ --open) &
 	wait '%-'
 	livedown stop
 }
