@@ -277,7 +277,7 @@ function ff() {
 		eval find -H . "$DIR_ARGS"
 	else
 		# find [args...] name of target
-		find -H . "${@:1:$# - 1}" -iname "${@: -1}"
+		find -H . -regextype posix-extended "${@:1:$# - 1}" -iname "${@: -1}"
 	fi
 }
 function ffc() {
