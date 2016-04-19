@@ -268,16 +268,13 @@ function fd() {
 }
 # find file suffix in any given subdirectory 
 function ff() {
+	local ARGS='-H . -regextype posix-extended'
 	if [ $# = 2 ]; then
-		#if [ -d "$1" ]; then
-		#	local DIR_ARGS="$1"
-		#else
-			local DIR_ARGS="'-iregex' '."'*'"$1."'*/.*'"$2""'"
-		#fi
-		eval find -H . "$DIR_ARGS"
+		local DIR_ARGS="'-iregex' '."'*'"$1."'*/.*'"$2""'"
+		eval find "${ARGS}" "$DIR_ARGS"
 	else
 		# find [args...] name of target
-		find -H -regextype posix-extended . "${@:1:$# - 1}" -iname "${@: -1}"
+		find $ARGS "${@:1:$# - 1}" -iname "${@: -1}"
 	fi
 }
 function ffc() {
