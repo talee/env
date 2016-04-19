@@ -5,7 +5,7 @@
 astart(){ sudo apachectl start "$@"; }
 astop(){ sudo apachectl stop "$@"; }
 arestart(){ sudo apachectl restart "$@"; }
-# Prints bash key bindings and commands
+# Prints bash key bindings and commands. vi mode bash shortcuts
 bash-print-bindings() { bind -p;  }
 ba(){ . ~/Projects/misc/env/.bash_aliases "$@"; }
 bo(){ bower "$@"; }
