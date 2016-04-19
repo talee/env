@@ -194,6 +194,9 @@ function print256colors() {
 function vx() {
 	v `"$@"`
 }
+function vsx() {
+	vs `"$@"`
+}
 function upd() {
 	time bu &
 	time nu &
