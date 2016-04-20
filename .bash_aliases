@@ -197,6 +197,9 @@ function vx() {
 function vsx() {
 	vs `"$@"`
 }
+function rx() {
+	r `"$@"`
+}
 function upd() {
 	time bu &
 	time nu &
