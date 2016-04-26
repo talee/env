@@ -286,6 +286,9 @@ function ff() {
 function ffc() {
 	ff "*$1*"
 }
+function ffcv() {
+	v `ffc "$@"`
+}
 function ffe() {
 	ff "*$@"
 }
