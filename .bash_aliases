@@ -187,7 +187,7 @@ tt(){ top -n0 -l1 "$@"; }
 wakeTimes(){ pmset -g log | grep -iE '^.{24} wake ' "$@"; }
 whichsym() { readlink -f `which "$@"`; }
 x(){ exit "$@"; }
-xrm(){ xargs -rI {} rm '{}'; }
+xrm(){ xargs -rI {} rm -v '{}'; }
 
 function print256colors() {
  ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; )
