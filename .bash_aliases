@@ -64,6 +64,7 @@ gga() { git add "$@"; }
 ggan() {
 	gsnn
 	read -p 'File index to add: ' FI
+	echo "HELLO $FI"
 	git add `sel $FI gsn`
 }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
