@@ -61,6 +61,7 @@ ggsh() { git show "$@"; }
 ggsu() { git show stash@{"$1"}^3 "${@:2}"; }
 ggsun() { ggsu "$@" --name-only; }
 gga() { git add "$@"; }
+ggan() { gsnn && git add `sel "$@" gsn`; }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
 ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
