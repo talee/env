@@ -63,6 +63,7 @@ ggsun() { ggsu "$@" --name-only; }
 gga() { git add "$@"; }
 ggan() {
 	gsnn
+	local FI=''
 	read -p 'File index to add: ' FI
 	git add `sel $FI gsn`
 }
