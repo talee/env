@@ -71,7 +71,12 @@ gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
 ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
-gro() { cd `git rev-parse --show-cdup "$@"`; }
+gro() {
+	local DIR=`git rev-parse --show-cdup "$@"`
+	if [ -z "$DIR" ]; then
+		cd "$DIR"
+	fi
+}
 gc(){ git ch "$@"; }
 gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
 gcm(){ git cm "$@"; }
