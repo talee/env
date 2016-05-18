@@ -78,6 +78,7 @@ gro() {
 	fi
 }
 gc(){ git ch "$@"; }
+gcdd(){ git ch develop "$@"; }
 gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
 gcm(){ git cm "$@"; }
 gb(){
