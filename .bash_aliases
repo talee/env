@@ -73,7 +73,7 @@ ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gro() {
 	local DIR=`git rev-parse --show-cdup "$@"`
-	if [ -z "$DIR" ]; then
+	if [ "$DIR" ]; then
 		cd "$DIR"
 	fi
 }
