@@ -11,6 +11,7 @@ ba(){ . ~/Projects/misc/env/.bash_aliases "$@"; }
 bo(){ bower "$@"; }
 bu(){ bower up "$@"; }
 bi(){ bower i "$@"; }
+bn(){ babel-node "$@"; }
 C(){ c "$@"; }
 #alias c='g++ -Wall'
 g++d(){ g++ -Wall -g -O0 "$@"; }

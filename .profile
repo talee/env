@@ -68,7 +68,8 @@ export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 export PATH=$PATH:$PHANTOMJS_BIN
 
 # NPM
-export PATH=$PATH:$HOME/local/bin/
+# export PATH=$PATH:$HOME/local/bin/
+# Comment out for NVM
 
 # Inkscape - requires full path
 #export PATH=$PATH:/Applications/Inkscape.app/Contents/Resources/bin/
