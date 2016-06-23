@@ -9,6 +9,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export EDITOR=vim
 # Use GNU coreutils by default
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# Use GNU findutils by default
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
 source "$HOME/.bash_aliases"
 
