@@ -1,12 +1,14 @@
 # vi mode for editing and keymaps in bash
 set -o vi
+# Prevent writing to bash_history
+unset HISTFILE
 # MacPorts Installer addition on 2012-06-12_at_21:40:33: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 export EDITOR=vim
 # Use GNU coreutils by default
-export PATH=/opt/local/libexec/gnubin/:$PATH
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 source "$HOME/.bash_aliases"
 
@@ -54,6 +56,7 @@ export PATH=$PATH:/Applications/MAMP/bin/
 #export PATH=/usr/local/git/bin/:$PATH
 
 # Java
+export PATH=$PATH:/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/
 export JAVA_HOME="$(java_home)"
 export JAVA_HOME7="`java_home -v 1.7`"
 
