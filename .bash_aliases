@@ -177,7 +177,7 @@ sleepTimes(){ pmset -g log | grep -iE '^.{24} sleep ' "$@"; }
 snt(){ sn \"s/\n\n\t/ /g\" "$@"; }
 start_mysql(){ mysqld_safe & }
 stop_mysql(){ mysqladmin shutdown -hlocalhost -uroot -p "$@"; }
-sudo(){ sudo "$@"; }
+#sudo(){ sudo "$@"; }
 unblockRecent(){ sudo chattr -i ~/.local/share/recently-used.xbel "$@"; }
 u(){ cd ..; ls -CF "$@"; }
 ups(){ cd -P .. "$@"; }
@@ -466,6 +466,9 @@ function p4filech() {
 }
 function sn() {
 	sed ":a;N;\$!ba;$@"
+}
+function sm() {
+	sudo m "$@"
 }
 function m() {
 	if [ $2 ]; then
