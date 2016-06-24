@@ -477,7 +477,6 @@ function m() {
 		mkdir "$@"
 	fi
 }
-export -f m
 function total() {
 	if [ $1 ]; then
 		paste -sd+ $1 | bc
