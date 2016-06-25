@@ -16,6 +16,9 @@ source "$HOME/.bash_aliases"
 
 # GlassFish Server manager tools
 export PATH=/Applications/NetBeans/glassfish-3.1.2.2/bin:$PATH
+export PATH=/opt/glassfish3/glassfish/bin:$PATH
+# Work
+export glassfishdir=/opt/glassfish3/
 
 # Android dev tools
 export PATH=/Users/$USER/dev/android-sdk/platform-tools:$PATH

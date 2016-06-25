@@ -125,6 +125,7 @@ godocServer(){ godoc -http=:6060 & open http://localhost:6060/pkg/ "$@"; }
 chrome-debug(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=remote-profile "$@"; }
 gv(){ mvim "$@"; }
 h(){ htop "$@"; }
+shtop(){ sudo htop "$@"; }
 h1() { head -1 "$@"; }
 hgcommitted(){ hg st --change -1 "$@"; }
 iojs(){ ~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs "$@"; }
