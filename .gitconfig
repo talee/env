@@ -2,7 +2,7 @@
 	name = Thomas Lee
 	email = Thomas_Lee@intuit.com
 [core]
-	excludesfile = /Users/talee/.gitignore_global
+	#default $HOME/.config/git/ignore 
 	autocrlf = input
 [merge]
 	tool = p4merge
