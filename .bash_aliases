@@ -188,7 +188,9 @@ upl(){ cd ..; ls -CF "$@"; }
 upp(){ cd ../../ "$@"; }
 uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
-v(){ mvim -v "$@"; }
+v(){
+	mvim -v --cmd "let light_startup=$LV" "$@"
+}
 vs(){ v -O "$@"; }
 vv(){ v ~/.vimrc "$@"; }
 vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc "$@"; }
