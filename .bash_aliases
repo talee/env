@@ -2,6 +2,9 @@
 # Mac aliases
 # tac for example requires coreutils
 
+# Custom light Vim startup
+export LV=1
+
 astart(){ sudo apachectl start "$@"; }
 astop(){ sudo apachectl stop "$@"; }
 arestart(){ sudo apachectl restart "$@"; }
