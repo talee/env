@@ -192,6 +192,9 @@ upp(){ cd ../../ "$@"; }
 uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
 v(){
+	if [ -z $LV ]; then
+		export LV=0
+	fi
 	mvim -v --cmd "let light_startup=$LV" "$@"
 }
 vs(){ v -O "$@"; }
