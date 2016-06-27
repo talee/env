@@ -190,7 +190,7 @@ uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
 v(){ mvim -v "$@"; }
 vs(){ v -O "$@"; }
-vv(){ v ~/.vrc "$@"; }
+vv(){ v ~/.vimrc "$@"; }
 vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc "$@"; }
 o(){ open "'.'" "$@"; }
 op(){ open "$@"; }
