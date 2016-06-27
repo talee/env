@@ -33,6 +33,7 @@
 	pop = stash pop
 	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 	st = status
+	sub = submodule
 [filter "media"]
 	required = true
 	clean = git media clean %f
