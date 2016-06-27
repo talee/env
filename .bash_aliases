@@ -26,7 +26,7 @@ copypwd(){ pwd -P | tr -d \\n | pbcopy "$@"; }
 cutcl(){ cut -d' ' -f2 | tr -d \"\n\" "$@"; }
 cutclc(){ cutcl | pbcopy "$@"; }
 curl-file(){ ccl -K "$@"; }
-d(){ vim -d "$@"; }
+d(){ v -d "$@"; }
 diffstr(){ diff <(echo "$1") <(echo "$2"); }
 #alias diskspace="df -h /dev/disk0s2/ | grep -C 2 '[0-9\.]\+[GM]\s\+[0-9]\+\%'"
 diskspace(){ df -h | head -2 | grep -C 1 -i Gi "$@"; }
@@ -36,7 +36,7 @@ enablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool false "$@"; 
 disablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool true "$@"; }
 # Gets the authoritative name server for a given domain name
 dns_root(){ nslookup -type=soa "$@"; }
-e(){ vim "$@"; }
+e(){ v "$@"; }
 f(){ fg "$@"; }
 findnonhidden(){ find . -type f \( ! -regex ".*/\..*" \) "$@"; }
 findtextfiles(){ find . -type f -exec grep -Iq . {} \; -and -print "$@"; }
@@ -190,13 +190,13 @@ uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
 v(){ mvim -v "$@"; }
 vs(){ v -O "$@"; }
-vv(){ vim ~/.vimrc "$@"; }
+vv(){ v ~/.vrc "$@"; }
 vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc "$@"; }
 o(){ open "'.'" "$@"; }
 op(){ open "$@"; }
 lastC(){ l -C1 -t | head -1 "$@"; }
-r(){ vim -Mn "$@"; }
-ro(){ vim -M "$@"; }
+r(){ v -Mn "$@"; }
+ro(){ v -M "$@"; }
 te(){ open -a TextEdit "$@"; }
 tt(){ top -n0 -l1 "$@"; }
 wakeTimes(){ pmset -g log | grep -iE '^.{24} wake ' "$@"; }
@@ -357,7 +357,7 @@ function gt {
 	ft "$1" "$2" true
 }
 function va() {
-	vim "$1" && git add "$1"
+	v "$1" && git add "$1"
 }
 function ffb() {
 	find "$1" \( -path "*/build" -o -path "*/dist" -o -path "*/gradleBuild" \) -prune -o -iname "*$2*" -print
@@ -369,16 +369,16 @@ function ffebui() {
 	ffbui "*$@"
 }
 function ffvs() {
-	vim -O `ff "$@"`
+	v -O `ff "$@"`
 }
 function ffvss() {
-	vim -o `ff "$@"`
+	v -o `ff "$@"`
 }
 function ffv() {
 	if [ $# = 1 ]; then
-		vim `ff "$1"`
+		v `ff "$1"`
 	else
-		vim `ff "$1" "${@:2}"`
+		v `ff "$1" "${@:2}"`
 	fi
 }
 function portopen() {
