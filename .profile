@@ -16,6 +16,8 @@ export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
 source "$HOME/.bash_aliases"
 
+export PATH="$HOME/dev/bin/:$PATH"
+
 # GlassFish Server manager tools
 export PATH=/Applications/NetBeans/glassfish-3.1.2.2/bin:$PATH
 export PATH=/opt/glassfish3/glassfish/bin:$PATH
@@ -96,5 +98,9 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+source ~/.bashrc
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
