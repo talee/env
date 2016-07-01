@@ -13,6 +13,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Use GNU findutils by default
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+# Golang executables
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 source "$HOME/.bash_aliases"
 
@@ -48,7 +50,7 @@ export P4CONFIG=.p4config
 #export GOPATH=$GAE_DIR/gopath
 
 # Go Language (local)
-export GOROOT=/usr/local/go
+#export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=/Users/$USER/Projects/go/ext/:/Users/$USER/Projects/go/own/
 export GOPATH_INITIAL=$GOPATH
