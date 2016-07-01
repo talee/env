@@ -417,6 +417,9 @@ function c() {
 function cdd() {
 cd `dirname $@`
 }
+function cdx() {
+	cd `"$@"`
+}
 function p4changelistOf() {
 	p4 describe `p4filech $@`
 }
