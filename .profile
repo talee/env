@@ -68,8 +68,8 @@ export PATH=$PATH:/Applications/MAMP/bin/
 
 # Java
 export PATH=$PATH:/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/
-export JAVA_HOME="$(java_home)"
-export JAVA_HOME7="`java_home -v 1.7`"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home"
+export JAVA_HOME7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
 
 # Maven
 export M2_HOME=/usr/local/apache-maven/current/
