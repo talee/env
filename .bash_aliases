@@ -207,6 +207,23 @@ r(){ v -Mn "$@"; }
 ro(){ v -M "$@"; }
 te(){ open -a TextEdit "$@"; }
 tt(){ top -n0 -l1 "$@"; }
+# Unzip first subdirectory of zip and renames it to given output dir. Requires
+# GNU sed.
+unzipone() {
+	local ZIPFILE=$1
+	local OUTDIR=$2
+	if [ -z "$2" ]; then
+		echo "Output dir name required as \$2."
+		return
+	fi
+	local TMPDIR=._tmp
+	local SUBDIR=`unzip -l "$ZIPFILE" | sed '4q;d' | awk '{print $4}'`
+	# In case it's not just one directory
+	mkdir $TMPDIR
+	unzip "$ZIPFILE" -d $TMPDIR
+	mv "$TMPDIR/$SUBDIR" "$OUTDIR"
+	rm -rf $TMPDIR
+}
 wakeTimes(){ pmset -g log | grep -iE '^.{24} wake ' "$@"; }
 whichsym() { readlink -f `which "$@"`; }
 x(){ exit "$@"; }

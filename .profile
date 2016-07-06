@@ -13,6 +13,9 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Use GNU findutils by default
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+# Use GNU sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # Golang executables
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
@@ -20,11 +23,12 @@ source "$HOME/.bash_aliases"
 
 export PATH="$HOME/dev/bin/:$PATH"
 
+# GlassFish
+#export GFDIR=/usr/local/glassfish-3.1.2/
+export GFDIR=/opt/open-glassfish3/
 # GlassFish Server manager tools
 export PATH=/Applications/NetBeans/glassfish-3.1.2.2/bin:$PATH
-export PATH=/opt/glassfish3/glassfish/bin:$PATH
-# Work
-export glassfishdir=/opt/glassfish3/
+export PATH=$GFDIR/glassfish/bin:$PATH
 
 # Android dev tools
 export PATH=/Users/$USER/dev/android-sdk/platform-tools:$PATH
