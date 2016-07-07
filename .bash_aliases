@@ -155,6 +155,7 @@ networknames(){ ~/Projects/local-netbios-awk/getNetBIOS.sh "$@"; }
 nn(){ npm "$@"; }
 ni(){ npm i "$@"; }
 nrm(){ npm rm "$@"; }
+ns() { npm start "$@"; }
 nu(){ npm up "$@"; }
 npmlist(){ npm list --depth 0 "$@"; }
 #p(){ python "$@"; }
