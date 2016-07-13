@@ -24,10 +24,9 @@ source "$HOME/.bash_aliases"
 export PATH="$HOME/dev/bin/:$PATH"
 
 # GlassFish
-#export GFDIR=/usr/local/glassfish-3.1.2/
-export GFDIR=/opt/open-glassfish3/
+export GFDIR=/usr/local/glassfish-3.1.2/
 # GlassFish Server manager tools
-export PATH=/Applications/NetBeans/glassfish-3.1.2.2/bin:$PATH
+#export PATH=/Applications/NetBeans/glassfish-3.1.2.2/bin:$PATH
 export PATH=$GFDIR/glassfish/bin:$PATH
 
 # Android dev tools
@@ -72,8 +71,9 @@ export PATH=$PATH:/Applications/MAMP/bin/
 
 # Java
 export PATH=$PATH:/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home"
 export JAVA_HOME7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
+export JAVA_HOME=$JAVA_HOME7
 
 # Maven
 export M2_HOME=/usr/local/apache-maven/current/
