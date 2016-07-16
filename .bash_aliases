@@ -44,6 +44,7 @@ f(){ fg "$@"; }
 findnonhidden(){ find . -type f \( ! -regex ".*/\..*" \) "$@"; }
 findtextfiles(){ find . -type f -exec grep -Iq . {} \; -and -print "$@"; }
 FIRE_LAZER_SYMANTEC(){ sudo killall SymAutoProtect navx "$@"; }
+livestreamer_start_at() { livestreamer --player-passthrough hls "$@" source; }
 lsnonhidden_tree(){ find . | grep -v "\/\." | less "$@"; }
 lu(){ l ../ "$@"; }
 flatzip(){ zip -rj "$@"; }
