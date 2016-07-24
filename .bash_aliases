@@ -235,8 +235,12 @@ whichsym() { readlink -f `which "$@"`; }
 x(){ exit "$@"; }
 xrm(){ xargs -rI {} rm -v '{}'; }
 vxgs() {
-	gsnn
-	read -p 'File index to edit: ' FI
+	if [ "$1" ]; then
+		local FI="$1"
+	else
+		gsnn
+		read -p 'File index to edit: ' FI
+	fi
 	vx sel "$FI" gsn
 }
 
