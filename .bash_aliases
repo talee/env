@@ -116,6 +116,7 @@ gitf(){ git fetch && git st "$@"; }
 gs(){ git st "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
+# Cut/select characters from 4th character to end of line
 gsn(){ git status --porcelain | cut -c4- "$@"; }
 gsnn(){ gsn "$@" | nl; }
 gu(){ gulp "$@"; }
