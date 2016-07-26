@@ -124,7 +124,7 @@ gu(){ gulp "$@"; }
 #gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
 gr(){ grep -irn "$@"; }
-grb(){ gr -I --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude="*.map" "$@"; }
+grb(){ gr -I --exclude-dir=.npm-cache --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude="*.map" "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
 grep(){ `which grep` --color=always "$@"; }
 grepi(){ grep -i --color=always "$@"; }
