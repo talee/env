@@ -120,7 +120,13 @@ gs(){ git st "$@"; }
 #alias gsn='git status --porcelain | cut -c4-'
 # Cut/select characters from 4th character to end of line
 gsn(){ git status --porcelain | cut -c4- "$@"; }
-gsnn(){ gsn "$@" | nl; }
+gsnn(){
+	if [ $1 ]; then
+		sel "$@" gsn
+	else
+		gsn "$@" | nl;
+	fi
+}
 gu(){ gulp "$@"; }
 #gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
