@@ -64,7 +64,7 @@ gfrestart(){ asadmin restart-domain domain1 "$@"; }
 gdc(){ git dc "$@"; }
 gg(){ git "$@"; }
 ggr(){ git reset "$@"; }
-ggrb() {git rebase "$@"; }
+ggrb() { git rebase "$@"; }
 ggr-origin-hard() { git reset --hard origin/`gbh` "$@"; }
 ggs(){ git stash "$@"; }
 ggsh() { git show "$@"; }
