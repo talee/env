@@ -112,6 +112,7 @@ gla(){ gl --abbrev-commit "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-show(){ git show --name-only "$@"; }
+git-tags() { git show-ref --tags "$@"; }
 git-view(){
 	local FILENAME=`ffebui "$2"`
 	git show "$1":"$FILENAME" | r -c "file .STD_IN_$FILENAME | filetype detect" -;
