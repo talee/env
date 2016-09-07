@@ -125,7 +125,7 @@ gs(){ git st "$@"; }
 # Cut/select characters from 4th character to end of line
 gsn(){ git status --porcelain | cut -c4- "$@"; }
 # No porcelain for relative paths
-gsno(){ git status | cut -c4- "$@"; }
+gsno(){ git status --short | cut -c4- "$@"; }
 gsnn(){
 	if [ $1 ]; then
 		sel "$@" gsn
