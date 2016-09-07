@@ -75,7 +75,7 @@ ggan() {
 	gsnn
 	local FI=''
 	read -p 'File index to add: ' FI
-	git add `sel $FI gsn`
+	git add `sel $FI gsno`
 }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
@@ -86,6 +86,9 @@ gro() {
 	if [ "$DIR" ]; then
 		cd "$DIR"
 	fi
+}
+groo() {
+	git rev-parse --show-cdup "$@"
 }
 gc(){ git ch "$@"; }
 gcdd(){ git ch develop "$@"; }
@@ -121,6 +124,8 @@ gs(){ git st "$@"; }
 #alias gsn='git status --porcelain | cut -c4-'
 # Cut/select characters from 4th character to end of line
 gsn(){ git status --porcelain | cut -c4- "$@"; }
+# No porcelain for relative paths
+gsno(){ git status | cut -c4- "$@"; }
 gsnn(){
 	if [ $1 ]; then
 		sel "$@" gsn
