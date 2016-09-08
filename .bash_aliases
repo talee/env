@@ -111,6 +111,7 @@ gl(){ git l "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
+git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-show(){ git show --name-only "$@"; }
 # -d dereferences annotated tags to show actual commit hash
 git-tags() { git show-ref --tags -d "$@"; }
