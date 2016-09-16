@@ -103,6 +103,9 @@ gb(){
 		git br | nl;
 	fi
 }
+gbg() {
+	gb | nl | g "$@";
+}
 # Robust printing of all local refs in git
 gb-shell() { git for-each-ref --format='%(refname:short)' refs/heads/; }
 gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
