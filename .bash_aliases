@@ -217,6 +217,7 @@ upl(){ cd ..; ls -CF "$@"; }
 upp(){ cd ../../ "$@"; }
 uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
+uz() { unzip "$@"; }
 v(){
 	if [ -z $LV ]; then
 		export LV=0
