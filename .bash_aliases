@@ -268,10 +268,10 @@ vxgs() {
 	if [ "$1" ]; then
 		FI="$1"
 	else
-		gsnn
+		gsnno
 		read -p 'File index to edit: ' FI
 	fi
-	vx sel "$FI" gsn
+	vx sel "$FI" gsno
 }
 vxin() {
 	v <("$@")
