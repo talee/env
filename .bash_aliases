@@ -139,6 +139,13 @@ gsnn(){
 		gsn "$@" | nl;
 	fi
 }
+gsnno() {
+	if [ $1 ]; then
+		sel "$@" gsno
+	else
+		gsno "$@" | nl;
+	fi
+}
 gu(){ gulp "$@"; }
 #gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
