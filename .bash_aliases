@@ -36,6 +36,7 @@ diffstr(){ diff <(echo "$1") <(echo "$2"); }
 diskspace(){ df -h | head -2 | grep -C 1 -i Gi "$@"; }
 dk() { docker "$@"; }
 ee() { echo -e "$@"; }
+emulator-start() { emulator -avd `emulator -list-avds | head -1` "$@"; }
 # Enables holding down a key to repeat in GUI apps; disables accent menu
 enablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool false "$@"; }
 disablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool true "$@"; }

@@ -30,7 +30,8 @@ export GFDIR=/usr/local/glassfish-3.1.2/
 export PATH=$GFDIR/glassfish/bin:$PATH
 
 # Android dev tools
-export PATH=/Users/$USER/dev/android-sdk/platform-tools:$PATH
+#export PATH=/Users/$USER/dev/android-sdk/platform-tools:$PATH
+export PATH=/Users/$USER/Library/Android/sdk/tools:$PATH
 
 # Perforce
 export PATH=/Applications/p4v.app/Contents/MacOS/p4v:$PATH
