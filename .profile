@@ -32,7 +32,7 @@ export PATH=$GFDIR/glassfish/bin:$PATH
 # Android dev tools
 #export PATH=/Users/$USER/dev/android-sdk/platform-tools:$PATH
 export PATH=/Users/$USER/Library/Android/sdk/tools:$PATH
-
+export PATH=/Users/$USER/Library/Android/sdk/platform-tools:$PATH
 # Perforce
 export PATH=/Applications/p4v.app/Contents/MacOS/p4v:$PATH
 export PATH=/Applications/p4sandbox-config.app/Contents/Resources/:$PATH
