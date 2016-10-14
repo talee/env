@@ -79,6 +79,7 @@ ggan() {
 	read -p 'File index to add: ' FI
 	git add `sel $FI gsno`
 }
+ggup() { git update-index --again "$@"; }
 gbh(){ git symbolic-ref --short HEAD "$@"; }
 gbr(){ gb -m `gbh` "$@"; }
 ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
