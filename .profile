@@ -47,11 +47,14 @@ export P4CONFIG=.p4config
 # You cannot use any binary libraries (go or otherwise) in a GAE project (you need source for everything)
 # goinstall is not intended for use with GAE projects
 # http://stackoverflow.com/questions/7599476/what-is-the-correct-way-to-install-google-go-and-app-engine-sdk
-#GAE_DIR=/Users/$USER/dev/google_appengine
+#GAE_DIR=$HOME/dev/go_appengine
 #export PATH=$PATH:$GAE_DIR
 #export GOROOT=$GAE_DIR/goroot
 #export PATH=$PATH:$GOROOT/bin
 #export GOPATH=$GAE_DIR/gopath
+
+# Google Cloud Platform tools autocomplete
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
 
 # Go Language (local)
 #export GOROOT=/usr/local/go
