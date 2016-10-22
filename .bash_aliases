@@ -91,7 +91,12 @@ gro() {
 	fi
 }
 groo() {
-	git rev-parse --show-cdup "$@"
+	local DIR=`git rev-parse --show-cdup "$@"`
+	if [ "$DIR" ]; then
+		echo "$DIR"
+	else
+		echo "./"
+	fi
 }
 gc(){ git ch "$@"; }
 gcdd(){ git ch develop "$@"; }
