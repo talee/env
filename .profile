@@ -86,8 +86,8 @@ export PATH=$PATH:$M2
 
 # PhantomJS
 #export PHANTOMJS_BIN=/usr/local/phantomjs-1.9.7-macosx/bin/
-export PHANTOMJS_BIN=/usr/local/bin/phantomjs
-export PATH=$PATH:$PHANTOMJS_BIN
+#export PHANTOMJS_BIN=/usr/local/bin/phantomjs
+#export PATH=$PATH:$PHANTOMJS_BIN
 
 # NPM
 # export PATH=$PATH:$HOME/local/bin/
