@@ -317,6 +317,9 @@ function gcb () {
 function ccl() {
 	curl "$@" -vsSD - > /dev/null
 }
+function cclo() {
+	curl "$@" -vsSD -
+}
 function generate_cert() {
 	#!/bin/sh
 	### Create ca.key, use a password phrase when asked
