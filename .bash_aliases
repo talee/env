@@ -318,7 +318,7 @@ function ccl() {
 	curl "$@" -vsSD - > /dev/null
 }
 function cclo() {
-	curl "$@" -vsSD -
+	echo `curl "$@" -sS`
 }
 function generate_cert() {
 	#!/bin/sh
