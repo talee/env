@@ -164,6 +164,7 @@ grb(){ gr -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
 grbnc() { grb --color=none "$@"; }
+grbncc() { grbc --color=none "$@"; }
 grep(){ `which grep` --color=always "$@"; }
 grepi(){ grep -i --color=always "$@"; }
 grepnc(){ grep --color=none "$@"; }
