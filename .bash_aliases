@@ -16,6 +16,7 @@ bu(){ bower up "$@"; }
 bi(){ bower i "$@"; }
 bn(){ babel-node "$@"; }
 C(){ c "$@"; }
+alias g++=g++-6
 #alias c='g++ -Wall'
 g++d(){ g++ -Wall -g -O0 "$@"; }
 chrome-blank(){ /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --user-data-dir=$HOME/temp/chrome > /dev/null 2>&1 --no-default-browser-check --no-first-run --disable-default-apps --disable-popup-blocking --start-maximized "$@"; }
