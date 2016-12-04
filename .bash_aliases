@@ -179,6 +179,8 @@ h1() { head -1 "$@"; }
 hgcommitted(){ hg st --change -1 "$@"; }
 iojs(){ ~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs "$@"; }
 is(){ sudo iftop -i wlan0 -B "$@"; }
+j7() { export JAVA_HOME=`java_home -v 1.7 "$@"`; }
+j8() { export JAVA_HOME=`java_home -v 1.8 "$@"`; }
 jdump(){ jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar "$@"; }
 jfind(){ java -jar $HOME/Utilities/jarscan/jarscan.jar "$@"; }
 ju(){ java org.junit.runner.JUnitCore "$@"; }
