@@ -122,6 +122,7 @@ gdw(){ git dw "$@"; }
 gl(){ git l "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
 git-cleanf(){ git clean -f "$@"; }
+git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
