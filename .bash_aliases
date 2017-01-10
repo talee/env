@@ -175,7 +175,7 @@ grepTimes(){ grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[
 godocServer(){ godoc -http=:6060 & open http://localhost:6060/pkg/ "$@"; }
 chrome-debug(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=remote-profile "$@"; }
 gv(){ mvim "$@"; }
-gvl() {gv "$@" -c 'call LargeFont()'; }
+gvl() { gv "$@" -c 'call LargeFont()'; }
 h(){ htop "$@"; }
 shtop(){ sudo htop "$@"; }
 h1() { head -1 "$@"; }
