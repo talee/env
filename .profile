@@ -80,9 +80,9 @@ export JAVA_HOME7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Ho
 export JAVA_HOME=$JAVA_HOME7
 
 # Maven
-export M2_HOME=/usr/local/apache-maven/current/
-export M2=$M2_HOME/bin/
-export PATH=$PATH:$M2
+#export M2_HOME=/usr/local/apache-maven/current/
+#export M2=$M2_HOME/bin/
+#export PATH=$PATH:$M2
 
 # PhantomJS
 #export PHANTOMJS_BIN=/usr/local/phantomjs-1.9.7-macosx/bin/

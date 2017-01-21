@@ -191,6 +191,7 @@ lc(){ ls -F -C1 "$@"; }
 less(){ `which less` -FSRX "$@"; }
 ll(){ ls -alF "$@"; }
 la(){ ls -ACF "$@"; }
+lao(){ ls -ACFd "$@" .*; }
 l(){ ls -CF "$@"; }
 lh(){ ls -gohF "$@"; }
 # List hidden files with their sizes
