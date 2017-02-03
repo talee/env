@@ -126,6 +126,7 @@ git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
+git-pullmaster(){ git fetch origin master:master "$@"; }
 git-show(){ git show --name-only "$@"; }
 # -d dereferences annotated tags to show actual commit hash
 git-tags() { git show-ref --tags -d "$@"; }
