@@ -136,6 +136,10 @@ git-view(){
 git-viewlast(){ git-view "HEAD~1" "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
 gitf(){ git fetch && git st "$@"; }
+git-path-part-remote() { 
+	local REMOTE=$(git ls-remote --get-url "$@")
+	echo -n ${REMOTE##*:}
+}
 gs(){ git st "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
