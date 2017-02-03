@@ -148,6 +148,13 @@ git-get-remote-for-user() {
 	local USER_REMOVED_PATH_PART=${REMOTE#*/}
 	echo "$BASE_URL:$@/$USER_REMOVED_PATH_PART"
 }
+# $1 user
+# $2 user's branch on remote to checkout
+git-checkout-remote-for-user() { 
+	local REMOTE_URL=`git-get-remote-for-user "$1"`
+	git remote add -f "$1" "$REMOTE_URL"
+	git checkout -t "$1/$2"
+}
 gs(){ git st "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
