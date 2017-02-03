@@ -140,6 +140,14 @@ git-path-part-remote() {
 	local REMOTE=$(git ls-remote --get-url "$@")
 	echo -n ${REMOTE##*:}
 }
+# Get remote path with user replaced with given argument
+git-get-remote-for-user() { 
+	local REMOTE=$(git ls-remote --get-url)
+	local BASE_URL=${REMOTE%:*}
+	local PATH_PART=${REMOTE##*:}
+	local USER_REMOVED_PATH_PART=${REMOTE#*/}
+	echo "$BASE_URL:$@/$USER_REMOVED_PATH_PART"
+}
 gs(){ git st "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
