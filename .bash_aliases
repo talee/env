@@ -183,7 +183,7 @@ gu(){ gulp "$@"; }
 #gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
 gr(){ grep -irn "$@"; }
-GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude=*.map --exclude=tags --exclude-dir=.idea"
+GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=gradleBuild --exclude-dir=exploded --exclude=*.map --exclude=tags --exclude-dir=.idea --exclude-dir=target"
 grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
