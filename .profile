@@ -19,7 +19,7 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # Golang executables
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-source "$HOME/.bash_aliases"
+#source "$HOME/.bash_aliases"
 
 export PATH="$HOME/dev/bin/:$PATH"
 
