@@ -68,6 +68,7 @@ gg(){ git "$@"; }
 # Sets up autocomplete with gg. Assumes git-completion.bash has been sourced.
 __git_complete gg _git
 ggr(){ git reset "$@"; }
+__git_complete ggr _git_reset
 ggrh1(){ ggr HEAD~ "$@"; }
 ggrb() { git rebase "$@"; }
 ggr-origin-hard() { git reset --hard origin/`gbh` "$@"; }
