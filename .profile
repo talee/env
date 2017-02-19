@@ -100,6 +100,9 @@ alias inkscape='/Applications/Inkscape.app/Contents/Resources/bin/inkscape -z'
 # Google Closure Compiler
 export PATH=$PATH:$HOME/dev/lib/compiler-latest/
 
+# pip python bin e.g. eb for AWS
+export PATH=$PATH:$HOME/Library/Python/2.7/bin/
+
 # BOTTOM - set only if not set before
 if [ -z "${INITIAL_PATH}" ]
 then

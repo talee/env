@@ -268,6 +268,7 @@ upp(){ cd ../../ "$@"; }
 uppp(){ cd ../../../ "$@"; }
 upppp(){ cd ../../../../ "$@"; }
 uz() { unzip "$@"; }
+validate_yaml() { ruby -e "require 'yaml';puts YAML.load_file('$@')"; }
 v(){
 	if [ -z $LV ]; then
 		export LV=0
