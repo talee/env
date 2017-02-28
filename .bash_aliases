@@ -71,6 +71,7 @@ ggr(){ git reset "$@"; }
 __git_complete ggr _git_reset
 ggrh1(){ ggr HEAD~ "$@"; }
 ggrb() { git rebase "$@"; }
+__git_complete ggrb _git_rebase
 ggr-origin-hard() { git reset --hard origin/`gbh` "$@"; }
 ggs(){ git stash "$@"; }
 ggsh() { git show "$@"; }
