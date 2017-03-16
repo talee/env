@@ -354,6 +354,9 @@ function gcb () {
 function ccl() {
 	curl "$@" -vsSD - > /dev/null
 }
+function cclb() {
+	curl -w "@$HOME/.time-stats.txt" "$@" -vsSD -
+}
 function cclo() {
 	echo `curl "$@" -sS`
 }
