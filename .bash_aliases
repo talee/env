@@ -617,6 +617,9 @@ function total() {
 		paste -sd+ | bc
 	fi
 }
+function calc() {
+	bc <<< "scale=5; $@";
+}
 # Requires inkscape to be aliased to the full path and -z
 function convertTextToPath() {
 	local TMP_FILE_NAME="convertText-tmp-pdf.pdf"
