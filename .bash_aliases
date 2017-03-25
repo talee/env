@@ -30,7 +30,7 @@ copypwd(){ pwd -P | tr -d \\n | pbcopy "$@"; }
 cutcl(){ cut -d' ' -f2 | tr -d \"\n\" "$@"; }
 cutclc(){ cutcl | pbcopy "$@"; }
 curl-file(){ ccl -K "$@"; }
-curl-download() { ccl -O -J "$@"; }
+curl-download() { curl -O -J "$@"; }
 current_dir_name() { echo ${PWD##*/}; }
 d(){ v -d "$@"; }
 diffstr(){ diff <(echo "$1") <(echo "$2"); }
