@@ -164,6 +164,7 @@ git-checkout-remote-for-user() {
 	git checkout -t "$1/$2"
 }
 gs(){ git st "$@"; }
+gst(){ git status -uno "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
 # Cut/select characters from 4th character to end of line
