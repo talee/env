@@ -231,6 +231,7 @@ mysql_local(){ mysql --host=localhost -uroot -p "$@"; }
 # Prints out a bunch of local network devices and highlights device names
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
 networknames(){ ~/Projects/local-netbios-awk/getNetBIOS.sh "$@"; }
+node-debug() { node --inspect --debug-brk "$@"; }
 nn(){ npm "$@"; }
 ni(){ npm i "$@"; }
 nrm(){ npm rm "$@"; }
