@@ -280,6 +280,9 @@ v(){
 	fi
 	mvim -v --cmd "let light_startup=$LV" "$@"
 }
+vp(){
+	v `pbpaste`
+}
 vs(){ v -O "$@"; }
 vv(){ v ~/.vimrc "$@"; }
 vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc "$@"; }
