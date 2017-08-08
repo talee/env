@@ -171,11 +171,14 @@ gst(){ git status -uno "$@"; }
 #alias gsn='git status --porcelain | cut -c4-'
 # Cut/select characters from 4th character to end of line
 gsn(){ git status --porcelain | cut -c4- "$@"; }
+# tracked only
+gsnt(){ git status --porcelain -uno | cut -c4- "$@"; }
 # No porcelain for relative paths
 gsno(){ git status --short | cut -c4- "$@"; }
+# tracked only
 gsnn(){
 	if [ $1 ]; then
-		sel "$@" gsn
+		sel "$@" gsnt
 	else
 		gsn "$@" | nl;
 	fi
