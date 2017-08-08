@@ -180,7 +180,7 @@ gsnn(){
 	if [ $1 ]; then
 		sel "$@" gsnt
 	else
-		gsn "$@" | nl;
+		gsnt "$@" | nl;
 	fi
 }
 gsnno() {
