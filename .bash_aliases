@@ -120,6 +120,7 @@ gb(){
 		git br | nl;
 	fi
 }
+__git_complete gb _git_branch
 gbg() {
 	gb | nl | g "$@";
 }
