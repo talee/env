@@ -128,6 +128,7 @@ gbg() {
 gb-shell() { git for-each-ref --format='%(refname:short)' refs/heads/; }
 gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
 gdw(){ git dw "$@"; }
+gdwn(){ gdw `gsnno "$@"`; }
 gl(){ git l "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
 git-cleanf(){ git clean -f "$@"; }
