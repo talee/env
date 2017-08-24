@@ -108,7 +108,10 @@ groo() {
 }
 gc(){ git ch "$@"; }
 __git_complete gc _git_checkout
-gcn(){ gc `gsnno "$@"`; }
+gcn(){
+	FILE=`gsnno "$@"`
+	gc "$FILE"
+}
 gcdd(){ git ch develop "$@"; }
 gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
 gcm(){ git cm "$@"; }
