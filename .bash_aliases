@@ -110,7 +110,9 @@ gc(){ git ch "$@"; }
 __git_complete gc _git_checkout
 gcn(){
 	FILE=`gsnno "$@"`
+	echo "$FILE"
 	gc "$FILE"
+	gst
 }
 gcdd(){ git ch develop "$@"; }
 gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
