@@ -206,6 +206,9 @@ GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exc
 grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
+grbi(){
+	gr --include="$1" -I ${GREP_EXCLUDE_DIRS} "${@:2}";
+}
 grbl(){ grb --exclude-dir=logs "$@"; }
 grbnc() { grb --color=none "$@"; }
 grbncc() { grbc --color=none "$@"; }
