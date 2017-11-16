@@ -207,11 +207,16 @@ grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
-	echo "$1"
-	echo "${@:2}"
-	gr --include="$1" -I ${GREP_EXCLUDE_DIRS} "${@:2}";
+	if [ $1 != '--color=none' ]; then
+		local INCLUDE_PATTERN=$1
+		local INDEX_SECOND_ARG=2
+	else
+		local INCLUDE_PATTERN=$2
+		local INDEX_SECOND_ARG=3
+	fi
+	gr --include="$INCLUDE_PATTERN" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
 }
-grbinc(){ grbi --color=none "${@}"; }
+grbnci(){ grbi --color=none "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
 grbnc() { grb --color=none "$@"; }
 grbncc() { grbc --color=none "$@"; }
