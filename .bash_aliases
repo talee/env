@@ -207,6 +207,8 @@ grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
+	echo "$1"
+	echo "${@:2}"
 	gr --include="$1" -I ${GREP_EXCLUDE_DIRS} "${@:2}";
 }
 grbinc(){ grbi --color=none "${@}"; }
