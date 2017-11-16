@@ -209,7 +209,7 @@ grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
 	gr --include="$1" -I ${GREP_EXCLUDE_DIRS} "${@:2}";
 }
-grbinc(){ grbi --color=none "$@"; }
+grbinc(){ grbi --color=none "${@}"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
 grbnc() { grb --color=none "$@"; }
 grbncc() { grbc --color=none "$@"; }
