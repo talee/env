@@ -137,6 +137,7 @@ gdw(){ git dw "$@"; }
 gdwn(){ gdw `gsnno "$@"`; }
 gl(){ git l "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
+gms() { gg merge --squash "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
