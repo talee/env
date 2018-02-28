@@ -253,7 +253,7 @@ lha(){ ls -agohF "$@"; }
 loginTimes(){ syslog -F raw -k Facility com.apple.system.lastlog | grep $USER | grep -v tty "$@"; }
 # List directories only
 lsd(){ l | grep --color=none '.*/' "$@"; }
-mvndep() { mvn dependency:tree "%@"; }
+mvndep() { mvn dependency:tree; }
 mysql_local(){ mysql --host=localhost -uroot -p "$@"; }
 # Prints out a bunch of local network devices and highlights device names
 #alias networknames='sudo nmap -sU --script nbstat.nse -p137 10.0.0.1-12 | grep -B 9 "NetBIOS name: \w\+"'
