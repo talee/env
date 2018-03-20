@@ -466,6 +466,9 @@ function ffc() {
 function ffcv() {
 	v `ffc "$@"`
 }
+function ffcvg() {
+	gv `ffc "$@"`
+}
 function ffe() {
 	ff "*$@"
 }
