@@ -535,6 +535,9 @@ function ffebui() {
 function ffvs() {
 	v -O `ff "$@"`
 }
+function ffcvs() {
+	v -O `ffc "$@"`
+}
 function ffvss() {
 	v -o `ff "$@"`
 }
