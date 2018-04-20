@@ -241,6 +241,7 @@ j8() { export JAVA_HOME=`java_home -v 1.8 "$@"`; }
 jdump(){ jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar "$@"; }
 jfind(){ java -jar $HOME/Utilities/jarscan/jarscan.jar "$@"; }
 ju(){ java org.junit.runner.JUnitCore "$@"; }
+k8-sh() { kubectl run -it --rm --restart=Never busybox --image=busybox sh "$@"; }
 lc(){ ls -F -C1 "$@"; }
 less(){ `which less` -FSRX "$@"; }
 ll(){ ls -alF "$@"; }
