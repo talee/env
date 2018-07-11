@@ -64,6 +64,7 @@ gfs(){ pgrep -fl felix "$@"; }
 gf(){ asadmin start-domain --debug=true domain1 "$@"; }
 gfstop(){ asadmin stop-domain domain1 "$@"; }
 gfrestart(){ asadmin restart-domain domain1 "$@"; }
+gcl() { git clone "$@"; }
 gdc(){ git dc "$@"; }
 gg(){ git "$@"; }
 ggpm() { git fetch origin master:master "$@"; }
