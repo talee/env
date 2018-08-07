@@ -145,6 +145,7 @@ git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-pullmaster(){ git fetch upstream master:master "$@"; }
+git-pullmasterm(){ git pull upstream master "$@"; }
 git-pulloriginmaster(){ git fetch origin master:master "$@"; }
 git-show(){ git show --name-only "$@"; }
 # -d dereferences annotated tags to show actual commit hash
