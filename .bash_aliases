@@ -142,6 +142,7 @@ gms() { gg merge --squash "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
+git-diffnames(){ git diff --name-status "$@"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-pullmaster(){ git fetch upstream master:master "$@"; }
