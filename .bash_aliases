@@ -160,6 +160,7 @@ git-view(){
 }
 git-viewlast(){ git-view "HEAD~1" "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
+git-pullsubmodule-update() { git submodule update --init --recursive "$@"; }
 gitf(){ git fetch && git st "$@"; }
 git-path-part-remote() { 
 	local REMOTE=$(git ls-remote --get-url "$@")
