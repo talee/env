@@ -294,6 +294,9 @@ sel() {
 	local OUTPUT=`"${@:2}"`
 	echo "$OUTPUT" | sed -ne "$1{p;q}"
 }
+sele() {
+	sed -ne "$1{p;q}"
+}
 sleepTimes(){ pmset -g log | grep -iE '^.{24} sleep ' "$@"; }
 snt(){ sn \"s/\n\n\t/ /g\" "$@"; }
 start_mysql(){ mysqld_safe & }
