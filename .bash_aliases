@@ -249,6 +249,17 @@ jdump(){ jconsole -pluginpath ~/Utilities/tda-bin-2.2/tda.jar "$@"; }
 jfind(){ java -jar $HOME/Utilities/jarscan/jarscan.jar "$@"; }
 ju(){ java org.junit.runner.JUnitCore "$@"; }
 k8-sh() { kubectl run -it --rm --restart=Never busybox --image=busybox sh "$@"; }
+kube-ssh() {
+	local POD_ENV=''
+	read -p 'Pod env: ' POD_ENV
+	local K8_CONFIG="--kubeconfig=config_$POD_ENV" 
+	local POD_INDEX=''
+	local POD_NAMES=`kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' "$K8_CONFIG"`
+	echo "$POD_NAMES" | nl
+	read -p 'Pod index to SSH into: ' POD_INDEX
+	local POD_NAME=`echo -n "$POD_NAMES" | sele $POD_INDEX`
+	kubectl exec -it "$POD_NAME" -- /bin/bash
+}
 lc(){ ls -F -C1 "$@"; }
 less(){ `which less` -FSRX "$@"; }
 ll(){ ls -alF "$@"; }
