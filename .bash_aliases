@@ -84,7 +84,6 @@ git-remote() {
 	git-origin | cut -d '/' -f 1
 }
 ggr-fetch-origin-hard() {
-	git-origin-hard
 	git fetch `git-remote` `ggbh` && ggr-origin-hard
 }
 ggs(){ git stash "$@"; }
