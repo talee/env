@@ -92,8 +92,8 @@ ggan() {
 	git add `sel $FI gsno`
 }
 ggup() { git update-index --again "$@"; }
-gbh(){ git symbolic-ref --short HEAD "$@"; }
-gbr(){ gb -m `gbh` "$@"; }
+ggbh(){ git symbolic-ref --short HEAD "$@"; }
+ggbr(){ gb -m `ggbh` "$@"; }
 ggf(){ git diff-tree --no-commit-id --name-only -r "$@"; }
 ggfh(){ git diff-tree --no-commit-id --name-only -r HEAD "$@"; }
 gro() {
