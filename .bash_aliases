@@ -80,8 +80,12 @@ ggrb() { git rebase "$@"; }
 __git_complete ggrb _git_rebase
 git-origin() { git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD) "$@"; }
 ggr-origin-hard() { git reset --hard `git-origin` "$@"; }
+git-remote() {
+	git-origin | cut -d '/' -f 1
+}
 ggr-fetch-origin-hard() {
-	git fetch `git-origin` `ggbh` && ggr-origin-hard
+	git-origin-hard
+	git fetch `git-remote` `ggbh` && ggr-origin-hard
 }
 ggs(){ git stash "$@"; }
 ggsh() { git show "$@"; }
