@@ -80,6 +80,9 @@ ggrb() { git rebase "$@"; }
 __git_complete ggrb _git_rebase
 git-origin() { git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD) "$@"; }
 ggr-origin-hard() { git reset --hard `git-origin` "$@"; }
+ggr-fetch-origin-hard() {
+	git fetch `git-origin` `ggbh` && ggr-origin-hard
+}
 ggs(){ git stash "$@"; }
 ggsh() { git show "$@"; }
 ggsu() { git show stash@{"$1"}^3 "${@:2}"; }
