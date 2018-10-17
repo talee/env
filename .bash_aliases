@@ -162,7 +162,7 @@ git-show(){ git show --name-only "$@"; }
 git-tags() { git show-ref --tags -d "$@"; }
 git-view(){
 	local FILENAME=`ffebui "$2"`
-	git show "$1":"$FILENAME" | r -c "file .STD_IN_$FILENAME | filetype detect" -;
+	git show "$1":"$FILENAME" | r -Rc "file .STD_IN_$FILENAME | filetype detect" -;
 }
 git-viewlast(){ git-view "HEAD~1" "$1"; }
 git-pullrecurse(){ git submodule foreach git pull "$@"; }
