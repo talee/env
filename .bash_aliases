@@ -152,6 +152,7 @@ git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-diffnames(){ git diff --name-status "$@"; }
+git-diffbranches() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative "$1".."$2"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-pullmaster(){ git fetch upstream master:master "$@"; }
