@@ -501,10 +501,10 @@ function ffc() {
 function ffcv() {
 	v `ffc "$@"`
 }
-function ffcbv() {
+function ffbcv() {
 	v `ffb . "$@"`
 }
-function ffcbvs() {
+function ffbcvs() {
 	vs `ffb . "$@"`
 }
 function ffcvg() {
