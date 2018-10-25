@@ -217,7 +217,7 @@ gu(){ gulp "$@"; }
 #gpg(){ gpg2 "$@"; }
 grave(){ echo -n '\`' | clipb "$@"; }
 gr(){ grep -irn "$@"; }
-GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=dist --exclude-dir=gradleBuild --exclude-dir=exploded --exclude=*.map --exclude=tags --exclude-dir=.idea --exclude-dir=target"
+GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.svn --exclude-dir=build --exclude-dir=dist --exclude-dir=gradleBuild --exclude-dir=exploded --exclude=*.map --exclude=tags --exclude-dir=.idea --exclude-dir=target --exclude-dir=out"
 grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
@@ -501,6 +501,12 @@ function ffc() {
 function ffcv() {
 	v `ffc "$@"`
 }
+function ffcbv() {
+	v `ffb . "$@"`
+}
+function ffcbvs() {
+	vs `ffb . "$@"`
+}
 function ffcvg() {
 	gv `ffc "$@"`
 }
@@ -559,7 +565,7 @@ function va() {
 	v "$1" && git add "$1"
 }
 function ffb() {
-	find "$1" \( -path "*/build" -o -path "*/dist" -o -path "*/gradleBuild" \) -prune -o -iname "*$2*" -print
+	find "$1" \( -path "*/build" -o -path "*/dist" -o -path "*/gradleBuild" -o -path "*/out" -o -path "*/target" \) -prune -o -iname "*$2*" -print
 }
 function ffbui() {
 	find . ! -path "*/build/*" ! -path "*/bower_components/*" ! -path "*/node_modules/*" -iname "$@"
