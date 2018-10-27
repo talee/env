@@ -264,7 +264,7 @@ kube-setup() {
 	local POD_NAMES=`kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' "$K8_CONFIG"`
 	echo "$POD_NAMES" | nl
 	read -p 'Pod index to SSH into: ' POD_INDEX
-	local POD_NAME=`echo -n "$POD_NAMES" | sele $POD_INDEX`
+	POD_NAME=`echo -n "$POD_NAMES" | sele $POD_INDEX`
 }
 kube-ssh() {
 	kube-setup
