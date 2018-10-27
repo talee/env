@@ -259,7 +259,7 @@ k8-sh() { kubectl run -it --rm --restart=Never busybox --image=busybox sh "$@"; 
 kube-ssh() {
 	local POD_ENV=''
 	read -p 'Pod env: ' POD_ENV
-	local K8_CONFIG="--kubeconfig=config_$POD_ENV" 
+	local K8_CONFIG="--kubeconfig=~/.kube/config_$POD_ENV" 
 	local POD_INDEX=''
 	local POD_NAMES=`kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' "$K8_CONFIG"`
 	echo "$POD_NAMES" | nl
