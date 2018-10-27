@@ -269,6 +269,12 @@ kube-setup() {
 kube-ssh() {
 	kube-setup
 	kubectl exec -it "$POD_NAME" -- /bin/bash
+	unset POD_NAME
+}
+kube-logs() {
+	kube-setup
+	kubectl logs "$POD_NAME" | less
+	unset POD_NAME
 }
 lc(){ ls -F -C1 "$@"; }
 less(){ `which less` -FSRX "$@"; }
