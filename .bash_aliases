@@ -69,6 +69,7 @@ gfstop(){ asadmin stop-domain domain1 "$@"; }
 gfrestart(){ asadmin restart-domain domain1 "$@"; }
 gcl() { git clone "$@"; }
 gdc(){ git dc "$@"; }
+gdm() { git diff master "$@"; }
 gg(){ git "$@"; }
 ggpm() { git fetch origin master:master "$@"; }
 # Sets up autocomplete with gg. Assumes git-completion.bash has been sourced.
