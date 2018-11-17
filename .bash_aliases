@@ -229,7 +229,7 @@ grbi(){
 	else
 		local COLOR_NONE=$1
 		local INCLUDE_PATTERN=$2
-		local INDEX_SECOND_ARG=3
+		local INDEX_SECOND_ARG=2
 	fi
 	gr "$COLOR_NONE" --include="$INCLUDE_PATTERN" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
 }
