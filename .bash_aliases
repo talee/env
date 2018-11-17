@@ -229,10 +229,16 @@ grbi(){
 		local INDEX_SECOND_ARG=2
 	else
 		local COLOR_NONE="$1"
-		local INCLUDE_PATTERN=$2
-		local INDEX_SECOND_ARG=3
+		if [ "$3" ]; then
+			local INCLUDE_PATTERN=$2
+			local INDEX_SECOND_ARG=3
+		else
+			local INCLUDE_PATTERN="\'*\'"
+			local INDEX_SECOND_ARG=2
+		fi
 	fi
-	gr "$COLOR_NONE" --include="$INCLUDE_PATTERN" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
+	echo gr "$COLOR_NONE" --include="'$INCLUDE_PATTERN'" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
+	gr "$COLOR_NONE" --include="'$INCLUDE_PATTERN'" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
 }
 grbnci(){ grbi --color=none "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
