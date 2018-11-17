@@ -222,13 +222,16 @@ GREP_EXCLUDE_DIRS="--exclude-dir=.npm-cache --exclude-dir=bower_components --exc
 grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
+# Recursively grep given arguments. Has the following parameter sets:
+# (phraseToSearchFor)
+# (filePatternToMatch, phraseToSearchFor)
+# (option, filePatternToMatch, phraseToSearchFor)
 grbi(){
 	if [ "$1" != '--color=none' ]; then
-		local COLOR_NONE="--color=auto"
 		local INCLUDE_PATTERN=$1
 		local INDEX_SECOND_ARG=2
 	else
-		local COLOR_NONE="$1"
+		local OPTION_ONE="$1"
 		if [ "$3" ]; then
 			local INCLUDE_PATTERN=$2
 			local INDEX_SECOND_ARG=3
@@ -240,8 +243,7 @@ grbi(){
 	if [ "$INCLUDE_PATTERN" ]; then
 		local INCLUDE_PATTERN="--include=$INCLUDE_PATTERN"
 	fi
-	echo gr "$COLOR_NONE" "$INCLUDE_PATTERN" -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
-	gr "$COLOR_NONE" "$INCLUDE_PATTERN" -I ${GREP_EXCLUDE_DIRS} -e "${@:$INDEX_SECOND_ARG}" -f .
+	gr $OPTION_ONE $INCLUDE_PATTERN -I ${GREP_EXCLUDE_DIRS} "${@:$INDEX_SECOND_ARG}";
 }
 grbnci(){ grbi --color=none "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
