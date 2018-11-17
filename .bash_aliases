@@ -223,7 +223,7 @@ grb(){ gr -I ${GREP_EXCLUDE_DIRS} "$@"; }
 grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
-	if [ $1 != '--color=none' ]; then
+	if [ "$1" != '--color=none' ]; then
 		local INCLUDE_PATTERN=$1
 		local INDEX_SECOND_ARG=1
 	else
