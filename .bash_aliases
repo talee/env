@@ -225,7 +225,7 @@ grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
 	if [ $1 != '--color=none' ]; then
 		local INCLUDE_PATTERN=$1
-		local INDEX_SECOND_ARG=2
+		local INDEX_SECOND_ARG=1
 	else
 		local COLOR_NONE=$1
 		local INCLUDE_PATTERN=$2
