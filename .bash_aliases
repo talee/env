@@ -224,11 +224,11 @@ grbd(){ grb --exclude-dir=dist "$@"; }
 grbc(){ grep -rn -I "$GREP_EXCLUDE_DIRS" "$@"; }
 grbi(){
 	if [ "$1" != '--color=none' ]; then
+		local COLOR_NONE="--color=auto"
 		local INCLUDE_PATTERN=$1
 		local INDEX_SECOND_ARG=2
-		echo "${@}"
 	else
-		local COLOR_NONE=$1
+		local COLOR_NONE="$1"
 		local INCLUDE_PATTERN=$2
 		local INDEX_SECOND_ARG=2
 	fi
