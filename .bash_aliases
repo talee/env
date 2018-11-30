@@ -57,6 +57,7 @@ lsnonhidden_tree(){ find . | grep -v "\/\." | less "$@"; }
 lu(){ l ../ "$@"; }
 flatzip(){ zip -rj "$@"; }
 g(){ grep --color=always -i "$@"; }
+get-line() { sed "$1q;d" "$2"; }
 # Highlights name, version, description of apt-cache show. Also grep -v extras.
 ga(){ grep -v "Depends\|Recommends\|MD5sum\|SHA1\|SHA256\|Description-md5\|Bugs" | grep -C 99 "Package: \w\+\|Version: .\+\|Description-\w\+: .\+" "$@"; }
 gf(){ asadmin start-domain --debug=true domain1 "$@"; }
