@@ -103,6 +103,9 @@ export PATH=$PATH:$HOME/dev/lib/compiler-latest/
 # pip python bin e.g. eb for AWS
 export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 
+# Use 5.7 for mysql over 8.0 cause SequelPro
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 export PATH=$PATH:$HOME/bin/
 
 # BOTTOM - set only if not set before
