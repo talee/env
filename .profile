@@ -62,6 +62,7 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/Projects/go/ext/:/$HOME/Projects/go/own/
 export GOPATH_INITIAL=$GOPATH
 export PATH=$PATH:${GOPATH//://bin:}/bin
+export GO111MODULE=on
 
 # Temp directory for Perforce
 export TMP=/Users/$USER/.tmp/
