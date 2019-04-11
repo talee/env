@@ -80,6 +80,7 @@ __git_complete ggr _git_reset
 ggrh1(){ ggr HEAD~ "$@"; }
 ggrb() { git rebase "$@"; }
 __git_complete ggrb _git_rebase
+__git_complete ggpr _git_pull
 git-origin() { git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD) "$@"; }
 ggr-origin-hard() { git reset --hard `git-origin` "$@"; }
 git-remote() {
