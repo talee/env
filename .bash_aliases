@@ -160,7 +160,7 @@ git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-pullmaster(){ git fetch upstream master:master "$@"; }
 git-pullmasterm(){ git pull upstream master "$@"; }
 git-pulloriginmaster(){ git fetch origin master:master "$@"; }
-git-pullrebase(){ git pull --rebase "$@"; }
+ggpr(){ git pull --rebase "$@"; }
 git-show(){ git show --name-only "$@"; }
 # -d dereferences annotated tags to show actual commit hash
 git-tags() { git show-ref --tags -d "$@"; }
