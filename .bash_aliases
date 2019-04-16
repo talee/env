@@ -521,7 +521,8 @@ function ff() {
 	fi
 }
 function ffc() {
-	O=$(ff "*$1*")
+	oo=$(ff "*$1*")
+	echo "$oo"
 }
 function ffcv() {
 	v `ffc "$@"`
