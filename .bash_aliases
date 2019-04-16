@@ -340,6 +340,7 @@ sel() {
 sele() {
 	sed -ne "$1{p;q}"
 }
+csel() { echo "$oo" | sele "$@"; }
 sleepTimes(){ pmset -g log | grep -iE '^.{24} sleep ' "$@"; }
 snt(){ sn \"s/\n\n\t/ /g\" "$@"; }
 start_mysql(){ mysqld_safe & }
