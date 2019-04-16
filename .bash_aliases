@@ -369,6 +369,7 @@ vs(){ v -O "$@"; }
 vv(){ v ~/.vimrc "$@"; }
 vlc(){ /Applications/VLC.app/Contents/MacOS/VLC -I rc "$@"; }
 o(){ open . "$@"; }
+oo() { echo "$oo"; }
 ov() { octave --no-gui "$@"; }
 op(){ open "$@"; }
 lastC(){ l -C1 -t | head -1 "$@"; }
