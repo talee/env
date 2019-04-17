@@ -40,6 +40,7 @@ dk() { docker "$@"; }
 docker-stop-last() {
 	docker ps -l --format "{{.Names}}" | xargs -I {} docker stop {}
 }
+docker-shell() { docker exec -ti "$@" /bin/bash; }
 ee() { echo -e "$@"; }
 emulator-start() { emulator -avd `emulator -list-avds | head -1` "$@"; }
 # Enables holding down a key to repeat in GUI apps; disables accent menu
