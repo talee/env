@@ -156,6 +156,7 @@ gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
 gdw(){ git dw "$@"; }
 gdwn(){ gdw `gsnno "$@"`; }
 gl(){ git l "$@"; }
+glm(){ git log --merges "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
 gms() { gg merge --squash "$@"; }
 git-cleanf(){ git clean -f "$@"; }
