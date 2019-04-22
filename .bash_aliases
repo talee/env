@@ -101,6 +101,12 @@ ggan() {
 	read -p 'File index to add: ' FI
 	git add `sel $FI gsno`
 }
+ggrn() {
+	gsnn
+	local FI=''
+	read -p 'File index to add: ' FI
+	git reset `sel $FI gsno`
+}
 ggup() { git update-index --again "$@"; }
 ggbh(){ git symbolic-ref --short HEAD "$@"; }
 ggbr(){ gb -m `ggbh` "$@"; }
