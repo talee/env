@@ -102,7 +102,7 @@ ggan() {
 	git add `sel $FI gsno`
 }
 ggrn() {
-	gsnn
+	git diff --name-only --cached | nl
 	local FI=''
 	read -p 'File index to add: ' FI
 	git reset `sel $FI gsno`
