@@ -102,10 +102,10 @@ ggan() {
 	git add `sel $FI gsno`
 }
 ggrn() {
-	git diff --name-only --cached | nl
+	git-staged | nl
 	local FI=''
 	read -p 'File index to add: ' FI
-	git reset `sel $FI gsno`
+	git reset `sel $FI git-staged`
 }
 ggup() { git update-index --again "$@"; }
 ggbh(){ git symbolic-ref --short HEAD "$@"; }
@@ -162,6 +162,7 @@ git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 git-diffnames(){ git diff --name-status "$@"; }
+git-staged() { git diff --name-only --cached "$@"; }
 git-diffbranches() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative "$1".."$2"; }
 git-mash() { gcm --amend --no-edit "$@"; }
 git-pulldev(){ git fetch origin develop:develop "$@"; }
