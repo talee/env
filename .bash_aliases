@@ -104,7 +104,7 @@ ggan() {
 ggrn() {
 	git-staged | nl
 	local FI=''
-	read -p 'File index to add: ' FI
+	read -p 'File index to reset: ' FI
 	git reset `sel $FI git-staged`
 }
 ggup() { git update-index --again "$@"; }
