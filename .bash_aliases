@@ -202,6 +202,7 @@ git-checkout-remote-for-user() {
 	git checkout -t "$1/$2"
 }
 gs(){ git st "$@"; }
+gsu(){ git ls-files --others --exclude-standard "$@"; }
 gst(){ git status -uno "$@"; }
 # git status file names only
 #alias gsn='git status --porcelain | cut -c4-'
