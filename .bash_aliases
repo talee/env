@@ -314,7 +314,7 @@ lha(){ ls -agohF "$@"; }
 loginTimes(){ syslog -F raw -k Facility com.apple.system.lastlog | grep $USER | grep -v tty "$@"; }
 # List directories only
 lsd(){ l | grep --color=none '.*/' "$@"; }
-mvndep() { mvn dependency:tree; }
+mvndep() { mvn dependency:tree "$@"; }
 mvneffective_settings() { mvn help:effective-settings "$@"; }
 mysql_local(){ mysql --host=localhost -uroot -p "$@"; }
 # Prints out a bunch of local network devices and highlights device names
