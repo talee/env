@@ -162,7 +162,8 @@ gms() { gg merge --squash "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
-git-diffnames(){ git diff --name-status "$@"; }
+# Use tilde on commit to compare diff
+git-diffnames(){ git diff --name-status -M --summary "$@"; }
 git-staged() { git diff --name-only --cached "$@"; }
 git-diffbranches() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative "$1".."$2"; }
 git-mash() { gcm --amend --no-edit "$@"; }
