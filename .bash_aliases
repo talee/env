@@ -273,6 +273,7 @@ gv(){ mvim "$@"; }
 gvl() { gv "$@" -c 'call LargeFont()'; }
 h(){ htop "$@"; }
 shtop(){ sudo htop "$@"; }
+sshnew() { ssh-keygen -t rsa -b 4096 -C "$@"; }
 h1() { head -1 "$@"; }
 hgcommitted(){ hg st --change -1 "$@"; }
 iojs(){ ~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs "$@"; }
