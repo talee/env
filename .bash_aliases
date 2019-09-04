@@ -32,6 +32,7 @@ cutclc(){ cutcl | pbcopy "$@"; }
 curl-file(){ ccl -K "$@"; }
 curl-download() { curl -O -J "$@"; }
 current_dir_name() { echo ${PWD##*/}; }
+date-epoch() { date "$@" '+%s'; }
 d(){ v -d "$@"; }
 diffstr(){ diff <(echo "$1") <(echo "$2"); }
 #alias diskspace="df -h /dev/disk0s2/ | grep -C 2 '[0-9\.]\+[GM]\s\+[0-9]\+\%'"
