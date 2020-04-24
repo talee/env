@@ -44,3 +44,10 @@
 	required = true
 [status]
 	submoduleSummary = true
+
+[url "ssh://git@github.intuit.com/"]
+	insteadOf = https://github.intuit.com/
+[ssh]
+	postBuffer = 10001000100
+[http]
+	postBuffer = 10001000100

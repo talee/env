@@ -168,6 +168,10 @@ git-diffnames(){ git diff --name-status -M "$@"; }
 git-staged() { git diff --name-only --cached "$@"; }
 git-diffbranches() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative "$1".."$2"; }
 git-mash() { gcm --amend --no-edit "$@"; }
+git-mash-push-f-no-verify() {
+	git-mash --no-verify
+	git push -f --no-verify
+}
 git-pulldev(){ git fetch origin develop:develop "$@"; }
 git-pullmaster(){ git fetch upstream master:master "$@"; }
 git-pullmasterm(){ git pull upstream master "$@"; }
