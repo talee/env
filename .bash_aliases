@@ -334,7 +334,7 @@ nrm(){ npm rm "$@"; }
 ns() { npm start "$@"; }
 nu(){ npm up "$@"; }
 npmlist(){ npm list --depth 0 "$@"; }
-#p(){ python "$@"; }
+py(){ python "$@"; }
 p() { pwd "$@"; }
 p4ch(){ p4p | tail -1 | cut -d" " -f2 "$@"; }
 p4-ch-delete(){ p4 change -d "$@"; }
