@@ -391,6 +391,7 @@ oo() { echo "$oo"; }
 ov() { octave --no-gui "$@"; }
 op(){ open "$@"; }
 lastC(){ l -C1 -t | head -1 "$@"; }
+querycsv() { csvsql --query "$1" --tables "$2" "$3"; }
 r(){ v -Mn "$@"; }
 ro(){ v -M "$@"; }
 te(){ open -a TextEdit "$@"; }
