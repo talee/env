@@ -47,6 +47,7 @@ emulator-start() { emulator -avd `emulator -list-avds | head -1` "$@"; }
 # Enables holding down a key to repeat in GUI apps; disables accent menu
 enablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool false "$@"; }
 disablekeyrepeat(){ defaults write -g ApplePressAndHoldEnabled -bool true "$@"; }
+digsimple() { dig "$@" +nostats +nocomments +nocmd;}
 # Gets the authoritative name server for a given domain name
 dns_root(){ nslookup -type=soa "$@"; }
 e(){ v "$@"; }
