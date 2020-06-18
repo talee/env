@@ -163,6 +163,7 @@ gla(){ gl --abbrev-commit "$@"; }
 gms() { gg merge --squash "$@"; }
 git-cleanf(){ git clean -f "$@"; }
 git-create-branch() { git push -u origin HEAD "$@"; }
+git-deletemerged() { git checkout master &&  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d; }
 git-diffprev(){ git diff HEAD@{1} "$@"; }
 # Use tilde on commit to compare diff
 git-diffnames(){ git diff --name-status -M "$@"; }
