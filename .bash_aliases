@@ -206,7 +206,8 @@ git-get-remote-for-user() {
 # $2 user's branch on remote to checkout
 git-checkout-remote-for-user() { 
 	local REMOTE_URL=`git-get-remote-for-user "$1"`
-	git remote add -f "$1" "$REMOTE_URL"
+	git remote add "$1" "$REMOTE_URL"
+	git fetch "$1" "$2"
 	git checkout -t "$1/$2"
 }
 gs(){ git st "$@"; }
