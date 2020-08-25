@@ -285,6 +285,7 @@ sshnew() { ssh-keygen -t rsa -b 4096 -C "$@"; }
 h1() { head -1 "$@"; }
 hgcommitted(){ hg st --change -1 "$@"; }
 iojs(){ ~/Downloads/iojs-v2.2.1-darwin-x64/bin/iojs "$@"; }
+intellij() { open -a 'Intellij IDEA' "$@"; }
 is(){ sudo iftop -i wlan0 -B "$@"; }
 j7() { export JAVA_HOME=`java_home -v 1.7 "$@"`; }
 j8() { export JAVA_HOME=`java_home -v 1.8 "$@"`; }

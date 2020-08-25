@@ -18,6 +18,8 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # Golang executables
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# Homebrew sbin
+export PATH=$PATH:/usr/local/sbin
 
 #source "$HOME/.bash_aliases"
 
