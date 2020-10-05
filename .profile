@@ -109,6 +109,9 @@ export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 # Use 5.7 for mysql over 8.0 cause SequelPro
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
+# Flutter SDK
+export PATH="$PATH:$HOME/Library/flutter/bin"
+
 export PATH=$PATH:$HOME/bin/
 
 # BOTTOM - set only if not set before
