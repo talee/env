@@ -77,10 +77,11 @@ export PATH=$PATH:/Applications/MAMP/bin/
 #export PATH=/usr/local/git/bin/:$PATH
 
 # Java
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH=$PATH:/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/
-export JAVA_HOME8="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"
-export JAVA_HOME7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
-export JAVA_HOME=$JAVA_HOME8
+#export JAVA_HOME8="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"
+#export JAVA_HOME7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
+#export JAVA_HOME=$JAVA_HOME8
 
 # Maven
 #export M2_HOME=/usr/local/apache-maven/current/
