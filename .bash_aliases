@@ -78,6 +78,7 @@ gdm() { git diff master "$@"; }
 gg(){ git "$@"; }
 ggpm() { git fetch origin master:master "$@"; }
 # Sets up autocomplete with gg. Assumes git-completion.bash has been sourced.
+source ~/.git-completion.bash
 __git_complete gg _git
 ggr(){ git reset "$@"; }
 __git_complete ggr _git_reset

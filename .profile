@@ -21,8 +21,6 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 # Homebrew sbin
 export PATH=$PATH:/usr/local/sbin
 
-#source "$HOME/.bash_aliases"
-
 export PATH="$HOME/dev/bin/:$PATH"
 
 # GlassFish
@@ -124,10 +122,6 @@ fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 source ~/.bashrc
-
-export NVM_DIR="$HOME/.nvm"
-#TODO: Uncomment
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #echo ~/.profile loaded >> ~/loaded
