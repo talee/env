@@ -142,6 +142,7 @@ gcn(){
 gcdd(){ git ch develop "$@"; }
 gconf() { cat `git rev-parse --show-cdup "$@"`.git/config; }
 gcm(){ git cm "$@"; }
+gcmnv(){ git cm --no-verify "$@"; }
 gcmm(){ git ch master "$@"; }
 gb(){
 	# don't pipe to nl if command is part of a pipe
