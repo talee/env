@@ -163,7 +163,7 @@ gb-shell() { git for-each-ref --format='%(refname:short)' refs/heads/; }
 gbn() { gb-shell | sed -ne "$1"'{p;q}'; }
 gdw(){ git dw "$@"; }
 gdwn(){ gdw `gsnno "$@"`; }
-gl(){ git l "$@"; }
+gl(){ git log "$@"; }
 glm(){ git log --merges "$@"; }
 gla(){ gl --abbrev-commit "$@"; }
 gms() { gg merge --squash "$@"; }
