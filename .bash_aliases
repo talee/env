@@ -10,7 +10,7 @@ astop(){ sudo apachectl stop "$@"; }
 arestart(){ sudo apachectl restart "$@"; }
 # Prints bash key bindings and commands. vi mode bash shortcuts
 bash-print-bindings() { bind -p;  }
-ba(){ . ~/Projects/misc/env/.bash_aliases "$@"; }
+ba(){ . ~/dev/env/.bash_aliases "$@"; }
 bo(){ bower "$@"; }
 bu(){ bower up "$@"; }
 bi(){ bower i "$@"; }
@@ -78,14 +78,15 @@ gdm() { git diff master "$@"; }
 gg(){ git "$@"; }
 ggpm() { git fetch origin master:master "$@"; }
 # Sets up autocomplete with gg. Assumes git-completion.bash has been sourced.
-source ~/.git-completion.bash
-__git_complete gg _git
+# if zsh, don't source as it'll conflict with packaged one 
+# source ~/.zsh/_git
+#__git_complete gg _git
 ggr(){ git reset "$@"; }
-__git_complete ggr _git_reset
+#__git_complete ggr _git_reset
 ggrh1(){ ggr HEAD~ "$@"; }
 ggrb() { git rebase "$@"; }
-__git_complete ggrb _git_rebase
-__git_complete ggpr _git_pull
+#__git_complete ggrb _git_rebase
+#__git_complete ggpr _git_pull
 git-ignore-rule() { git check-ignore -v "$@"; }
 git-origin() { git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD) "$@"; }
 ggr-origin-hard() { git reset --hard `git-origin` "$@"; }
@@ -132,7 +133,7 @@ groo() {
 	fi
 }
 gc(){ git ch "$@"; }
-__git_complete gc _git_checkout
+#__git_complete gc _git_checkout
 gcn(){
 	gsnn
 	local FI=''
@@ -152,7 +153,7 @@ gb(){
 		git br | nl;
 	fi
 }
-__git_complete gb _git_branch
+#__git_complete gb _git_branch
 gbg() {
 	gb | nl | g "$@";
 }
@@ -389,7 +390,7 @@ v(){
 	if [ -z $LV ]; then
 		export LV=0
 	fi
-	mvim -v --cmd "let light_startup=$LV" "$@"
+	vim -v --cmd "let light_startup=$LV" "$@"
 }
 vp(){
 	v `pbpaste`
@@ -774,8 +775,8 @@ function bak() {
 }
 # Updates git repo
 function bae() {
-	v ~/Projects/misc/env/.bash_aliases && ba
-	update_repo ~/Projects/misc/env/
+	v ~/dev/env/.bash_aliases && ba
+	update_repo ~/dev/env/
 }
 function wae() {
 	v ~/Projects/intuit/work-env/.work_bash_aliases.env && . ~/.work_bash_aliases.env
