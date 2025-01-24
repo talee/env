@@ -788,7 +788,7 @@ function update_repo() {
 	cd ""$1""
 	local DIFF_STAT=$(git status --porcelain)
 	git commit -am "Auto commit: $DIFF_STAT"
-	read -p "Push? " should_push
+	read "should_push?Push? "
 	if [ "$should_push" == "y" ]
 	then
 		git push
