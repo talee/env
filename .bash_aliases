@@ -277,7 +277,7 @@ grbnci(){ grbi --color=none "$@"; }
 grbl(){ grb --exclude-dir=logs "$@"; }
 grbnc() { grb --color=none "$@"; }
 grbncc() { grbc --color=none "$@"; }
-grep(){ `which grep` --color=always "$@"; }
+#grep(){ `which grep` --color=always "$@"; }
 grepi(){ grep -i --color=always "$@"; }
 grepnc(){ grep --color=none "$@"; }
 grepTimes(){ grep --color=none -o "\[Time [0-9]\{10\}" | grep -o --color=none "[0-9]\{10\}" "$@"; }
